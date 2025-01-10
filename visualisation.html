@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualisation - Projet ARGILES</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #5a7d6e;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .visualization-container {
+            display: flex;
+            gap: 20px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+        .image-section,
+        .xml-section {
+            flex: 1;
+            background: #f5f5f5;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .xml-section pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow: auto;
+            max-height: 400px;
+            background-color: #eaf3ec;
+            border: 1px solid #c9d6cd;
+            border-radius: 8px;
+            padding: 10px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .footer-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .btn-nav {
+            background-color: #88b097;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-nav:hover {
+            background-color: #769c86;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer a {
+            color: #88b097;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Visualisation des données</h1>
+        <p>Explorez les scans et les annotations XML associés</p>
+    </header>
+
+    <div class="visualization-container">
+        <!-- Image Section -->
+        <div class="image-section">
+            <h3>Scan du commentaire</h3>
+            <img src="path/to/your/image.jpg" alt="Scan du commentaire" id="visualizedImage">
+            <p class="text-muted mt-2">Zoom disponible en déplaçant la souris sur l'image.</p>
+        </div>
+
+        <!-- XML Section -->
+        <div class="xml-section">
+            <h3>Annotations XML</h3>
+            <pre id="xmlContent">
+&lt;commentaire&gt;
+    &lt;auteur&gt;Nom de l'élève&lt;/auteur&gt;
+    &lt;texte&gt;Ceci est un exemple d'annotation XML.&lt;/texte&gt;
+&lt;/commentaire&gt;
+            </pre>
+        </div>
+    </div>
+
+    <div class="footer-buttons">
+        <a href="index.html" class="btn-nav">← Retour à la page principale</a>
+        <a href="close-reading.html" class="btn-nav">Lecture rapprochée</a>
+        <a href="distant-reading.html" class="btn-nav">Lecture distante</a>
+    </div>
+
+    <footer>
+        <p>© 2025 Projet ARGILES | Université Grenoble Alpes</p>
+        <p>Ce site est sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a>.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

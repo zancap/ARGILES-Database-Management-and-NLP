@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonctionnalités - Projet ARGILES</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #5a7d6e;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .section-title {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-align: center;
+        }
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            background-color: #f5f5f5;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .icon {
+            font-size: 48px;
+            color: #88b097;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        footer a {
+            color: #88b097;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .btn-back {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #5a7d6e;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn-back:hover {
+            background-color: #4a665a;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fonctionnalités du Projet ARGILES</h1>
+        <p>Découvrez les outils et possibilités offertes par notre plateforme</p>
+        <a href="index.html" class="btn-back">← Retour à la page principale</a>
+    </header>
+
+    <div class="container py-5">
+	<div class="row g-4">
+		<!-- Card 1: Add Data -->
+		<div class="col-md-6">
+			<a href="upload.html" class="text-decoration-none d-block">
+				<div class="card text-center p-4">
+					<div class="icon">📄</div>
+					<h3 class="card-title">Ajouter des données</h3>
+					<p>
+						Téléchargez des fichiers XML et des images scannées des commentaires des élèves. 
+						Les deux fichiers doivent être téléchargés ensemble pour garantir la cohérence.
+					</p>
+				</div>
+			</a>
+		</div>
+
+		<!-- Card 2: NLP Analysis -->
+		<div class="col-md-6">
+			<div class="card text-center p-4">
+				<div class="icon">🧠</div>
+				<h3 class="card-title">Analyse NLP</h3>
+				<p>
+					Profitez de nos outils d’analyse pour explorer les textes de manière rapprochée ou distante. 
+					Vous pouvez aussi intégrer de nouvelles fonctionnalités adaptées à vos besoins.
+				</p>
+			</div>
+		</div>
+	</div>
+
+        <div class="row g-4 mt-4">
+            <!-- Card 3: Close and Distant Reading -->
+            <div class="col-md-6">
+                <div class="card text-center p-4">
+                    <div class="icon">🔍</div>
+                    <h3 class="card-title">Lecture rapprochée et distante</h3>
+                    <p>
+                        Analysez en profondeur un texte spécifique ou découvrez des tendances globales 
+                        à travers un grand corpus annoté.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 4: Visualization -->
+            <div class="col-md-6">
+                <div class="card text-center p-4">
+                    <div class="icon">📊</div>
+                    <h3 class="card-title">Page de visualisation</h3>
+                    <p>
+                        Explorez les scans des commentaires manuscrits avec un outil de zoom et examinez leurs 
+                        fichiers XML associés pour une analyse détaillée.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Projet ARGILES | Université Grenoble Alpes</p>
+        <p>Ce site est sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a>.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

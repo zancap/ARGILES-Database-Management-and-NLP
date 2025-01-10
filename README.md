@@ -1,7 +1,7 @@
 # ARGILES: Database Management and NLP
 
-Master's degree project: database creation and management, distant and close reading web visualization, NLP analysis for XML.
+Master's degree end-of-semester project: database creation and management, distant and close reading web visualization, NLP analysis for XML.
 
-Data: middle and high-school students collection of book reviews. XML encoded.
+Data: Middle and high-school students collection of book reviews. XML encoded commentaries and scanned images of original written texts.
 
-Goal: automatic generation of reviews for publishers.
+Goals: Automatic generation of reviews for publishers. Access to data for researchers.

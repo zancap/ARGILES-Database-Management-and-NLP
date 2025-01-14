@@ -1,6 +1,6 @@
 import sys,os
 
-xml_dir = "./XMLs/" # Changer ici le répertoire des documents
+xml_dir = "./transcriptions normalisées ARGILES COMONIMAGE/" # Changer ici le répertoire des documents
 xml_docs = [f for f in os.listdir(xml_dir) if os.path.isfile(os.path.join(xml_dir, f))]
 stats = {
 }
@@ -91,7 +91,7 @@ for i,doc in enumerate(stats_precised.keys()):
             print(f"\t\tMaximum : {stats_precised[doc][type_question][type_val][3]}")
 
 
-
+input("Fermer la fenêtre ? (Appuyez sur Entrée)")
 
 
                                 

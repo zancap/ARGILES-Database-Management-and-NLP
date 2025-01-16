@@ -65,30 +65,51 @@
         footer a:hover {
             text-decoration: underline;
         }
+        .alert {
+            margin: 20px auto;
+            max-width: 600px;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Upload de données</h1>
-        <p>Ajoutez vos fichiers XML et images au projet ARGILES</p>
+        <p>Ajoutez vos fichiers PDF ou XML au projet ARGILES</p>
         <a href="index.html" class="btn-back">← Retour à la page principale</a>
     </header>
 
     <div class="content">
         <h2 class="text-center mb-4">Téléversez vos fichiers</h2>
-        <form action="http://i3l.univ-grenoble-alpes.fr/argiles/" method="POST" enctype="multipart/form-data">
+
+        <!-- Upload XML Form -->
+        <form action="upload_xml.php" method="POST" enctype="multipart/form-data" class="mb-4">
+            <h3 class="mb-3">Téléversez un fichier XML</h3>
             <div class="mb-3">
                 <label for="xmlFile" class="form-label">Fichier XML</label>
-                <input type="file" class="form-control" id="xmlFile" name="xmlFile" accept=".xml" required>
-                <small class="form-text text-muted">Le fichier XML doit être nommé identiquement à l'image, sauf l'extension (ex : commentaire.xml).</small>
-            </div>
-            <div class="mb-3">
-                <label for="imageFile" class="form-label">Fichier image</label>
-                <input type="file" class="form-control" id="imageFile" name="imageFile" accept="image/*" required>
-                <small class="form-text text-muted">Le fichier image doit être nommé identiquement au fichier XML (ex : commentaire.jpg).</small>
+                <input type="file" class="form-control" id="xmlFile" name="fileUpload" accept=".xml" required>
+                <small class="form-text text-muted">
+                    <strong>Format attendu:</strong> <em>CLASSENAME_CLASSENAME_TitreOuvrage.xml</em><br>
+                    Exemple : <strong>4-G1_4-G2_Sirius.xml</strong>.
+                </small>
             </div>
             <div class="text-center">
-                <button type="submit" class="btn-upload">Téléverser</button>
+                <button type="submit" class="btn-upload">Téléverser XML</button>
+            </div>
+        </form>
+
+        <!-- Upload PDF Form -->
+        <form action="upload_pdf.php" method="POST" enctype="multipart/form-data">
+            <h3 class="mb-3">Téléversez un fichier PDF</h3>
+            <div class="mb-3">
+                <label for="pdfFile" class="form-label">Fichier PDF</label>
+                <input type="file" class="form-control" id="pdfFile" name="fileUpload" accept=".pdf" required>
+                <small class="form-text text-muted">
+                    <strong>Format attendu:</strong> <em>CLASSNAME_TitreOuvrage.pdf</em><br>
+                    Exemple : <strong>4-G1_Sirius.pdf</strong>.
+                </small>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn-upload">Téléverser PDF</button>
             </div>
         </form>
     </div>
@@ -96,9 +117,14 @@
     <footer>
         <p>© 2025 Projet ARGILES | Université Grenoble Alpes</p>
         <p>Ce site est sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a>.</p>
+		<p>Contactez le directeur du projet : 
+            <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a>
+        </p>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+

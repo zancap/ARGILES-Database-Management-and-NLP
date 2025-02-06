@@ -26,7 +26,7 @@ $createTables = [
         nomGroupe VARCHAR(255),
         idAudite INT,
         idIdee INT,
-        ideePreview VARCHAR(255)
+        ideeView TEXT
     )",
     "CREATE TABLE IF NOT EXISTS RomeoJuliette (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -39,7 +39,7 @@ $createTables = [
         nomGroupe VARCHAR(255),
         idAudite INT,
         idIdee INT,
-        ideePreview VARCHAR(255)
+        ideeView TEXT
     )"
 ];
 
@@ -76,18 +76,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['fileUpload'])) {
                     foreach ($reponse->idee as $idee) {
                         $idIdee = (int) $idee['idIdee'];
                         $ideeText = (string) $idee;
-                        $ideePreview = substr($ideeText, 0, 20); // Short preview
+                        $ideeView = $ideeText;
 
                         // Insert data into the appropriate table
                         $stmt = $conn->prepare("
                             INSERT INTO $targetTable 
-                            (idEtude, sujet, idQuestion, texteQuestion, type, idGroupe, nomGroupe, idAudite, idIdee, ideePreview) 
+                            (idEtude, sujet, idQuestion, texteQuestion, type, idGroupe, nomGroupe, idAudite, idIdee, ideeView) 
                             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                         ");
                         $stmt->bind_param(
                             "isississis",
                             $idEtude, $sujet, $idQuestion, $texteQuestion, $type,
-                            $idGroupe, $nomGroupe, $idAudite, $idIdee, $ideePreview
+                            $idGroupe, $nomGroupe, $idAudite, $idIdee, $ideeView
                         );
                         $stmt->execute();
                     }

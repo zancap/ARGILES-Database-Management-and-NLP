@@ -13,11 +13,43 @@ Author : Romain Girard
 """
 
 import os,shelve
+import string
 import xml.etree.ElementTree as ET
+import nltk
+from nltk.corpus import stopwords
+
+# ----------- Fonctions de support -----------
+
+def tokenize(text:str):
+    punctuation = " -'"+string.punctuation
+    letters = string.ascii_letters + 'àâéèêìòôùûç'
+    numbers = string.digits
+    output = []
+    token = []
+    last_char = ''
+    for char in text:
+        if char in punctuation and last_char in letters+numbers and last_char != '':
+            if char == "'":
+                token.append(char)
+            output.append(''.join(token).strip())
+            token = []
+        else:
+            token.append(char)
+        last_char = char
+
+    to_print = False
+    for idee in output:
+        if ' ' in idee:
+            to_print = True
+    
+    if to_print:
+        print(output)
+
+    return output
 
 # ----------- Fonctions -----------
 
-def read_xmls(xml_dir = "xmls/"):
+def read_xmls(xml_dir = "../xmls/"):
     """
         input : Dossier contenant les fichiers xml à lire
 
@@ -28,8 +60,9 @@ def read_xmls(xml_dir = "xmls/"):
             Audites ['id'] = {groupe:str KEY-UP, reponses : dict {type:str->reponse:str}}
             Chaque dictionnaire contient une clé pour passer au dictionnaire supérieur (KEY-UP) / inférieur (KEY-DOWN)
     """
-    while not os.path.isdir(xml_dir):
-        xml_dir = input("Veuillez donner le lien vers le dossier des fichiers xml")
+    
+    if not os.path.isdir(xml_dir):
+        print(f"Ce script est situe a {os.getcwd()}, et {xml_dir} n'est pas le lien vers les fichiers xmls.")
 
     files = [f for f in os.listdir(xml_dir) if os.path.isfile(os.path.join(xml_dir, f))]
     document = {}
@@ -98,27 +131,66 @@ def read_xmls(xml_dir = "xmls/"):
         raise
     
 def stats(ids_audites):
+    """
+        Extraction de statistiques pour un ensemble d'audités.
+        Informations extraites :
+            - Mots plus présents (10 plus présents)
+            - Valence des réponses (positive / négative) [A VENIR]
+
+        input : [id_document, [liste d'identifiants audités] ]
+
+        output : liste []
+    """
+    nltk.download('stopwords')
+    stoplist = stopwords.words('french')
+    document,groupes,audites = read_xmls()
+    ongoing_doc = ids_audites[0]
+    questions = {}
+    dict = {}
+
+    for id in ids_audites[1]:
+        if str(id) in audites.keys() and ongoing_doc in audites[str(id)]['reponses'].keys():
+            for reponse in audites[str(id)]['reponses'][ongoing_doc]:
+                if reponse not in questions.keys():
+                    questions[reponse] = []
+                for idee in audites[str(id)]['reponses'][ongoing_doc][reponse]:
+                    questions[reponse].append(idee)
+                    for token in tokenize(idee):
+                        if token.lower() not in stoplist and token[:-1].lower() not in stoplist:
+                            if token in dict.keys():
+                                dict[token] +=1
+                            else:
+                                dict[token] = 1
+    
+    for cat in questions.keys():
+        questions[cat]
+    #print(sorted([[x,dict[x]] for x in dict.keys()],key=lambda x:x[1],reverse=True))
     pass
 
-def get_audite(id_audite:str):
-    document,groupes,audites = read_xmls()
+def get_audite(id_audite:str,manga:str,xml_dir='./xmls/'):
+    """
+        Récupération des réponses d'un audité spécifique depuis le xml, pour affichage web.
+    """
+    document,groupes,audites = read_xmls(xml_dir)
     output = []
-    for text in audites[id_audite]['reponses'].keys():
-        text_reponses = []
-        for key in audites[id_audite]['reponses'][text].keys():
-            text_reponses.append(' '.join(audites[id_audite]['reponses'][text][key]))
-        output.append([text,text_reponses])
-    return output
+    if manga in audites[id_audite]["reponses"].keys():
+        for question in audites[id_audite]['reponses'][manga].keys():
+            text_reponses = []
+            for idea in audites[id_audite]['reponses'][manga][question]:
+                text_reponses.append(' '.join(audites[id_audite]['reponses'][manga][question]))
+            output.append(question+' : '+' '.join(text_reponses))
+        return ' | '.join(output)
 
 
 # ---------- Début du script -----------
 
-document,groupes,audites = read_xmls()
+#document,groupes,audites = read_xmls()
 #print(audites)
-print(get_audite('107'))
+#print(get_audite('107'))
+#print(stats(["manga Roméo et Juliette",range(100,200)]))
                 
 
 
 # ---------- Fin du script -----------
 
-print('Terminé')
+#print('Terminé')

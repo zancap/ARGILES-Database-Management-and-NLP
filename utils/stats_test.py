@@ -1,5 +1,10 @@
 import sys,os
 
+"""
+Script analysant les réponses données pour un texte précis.
+Offre la longueur minimum / moyenne / médiane et maximale des réponses, et le nombre minimum / moyen / médian / maximum d'idées par réponse.
+"""
+
 xml_dir = "./transcriptions normalisées ARGILES COMONIMAGE/" # Changer ici le répertoire des documents
 xml_docs = [f for f in os.listdir(xml_dir) if os.path.isfile(os.path.join(xml_dir, f))]
 stats = {

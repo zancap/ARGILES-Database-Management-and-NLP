@@ -141,12 +141,17 @@ def stats(ids_audites):
 
         output : liste []
     """
-    nltk.download('stopwords')
+    import spacy
+    nlp = spacy.load('fr_core_news_md')         # Lemmatiseur par Spacy
+
+    nltk.download('stopwords')                  # Liste de stopwords
     stoplist = stopwords.words('french')
+
     document,groupes,audites = read_xmls()
     ongoing_doc = ids_audites[0]
     questions = {}
     dict = {}
+    dict_lemmatized = {}
 
     for id in ids_audites[1]:
         if str(id) in audites.keys() and ongoing_doc in audites[str(id)]['reponses'].keys():
@@ -155,16 +160,36 @@ def stats(ids_audites):
                     questions[reponse] = []
                 for idee in audites[str(id)]['reponses'][ongoing_doc][reponse]:
                     questions[reponse].append(idee)
-                    for token in tokenize(idee):
-                        if token.lower() not in stoplist and token[:-1].lower() not in stoplist:
+                    doc = nlp(idee)
+                    for tok in doc:
+                        token = str(tok)
+                        lemma = tok.lemma_
+
+                        token = token.strip(' ')
+                        if token.lower() not in stoplist and token[:-1].lower() not in stoplist and lemma not in string.punctuation:
                             if token in dict.keys():
                                 dict[token] +=1
                             else:
                                 dict[token] = 1
+
+                            if lemma in dict_lemmatized.keys():
+                                dict_lemmatized[lemma] += 1
+                            else:
+                                dict_lemmatized[lemma] = 1
     
     for cat in questions.keys():
         questions[cat]
-    #print(sorted([[x,dict[x]] for x in dict.keys()],key=lambda x:x[1],reverse=True))
+    dic1 = sorted([[x,dict[x]] for x in dict.keys()],key=lambda x:x[1],reverse=True)
+    dic2 = sorted([[x,dict_lemmatized[x]] for x in dict_lemmatized.keys()],key=lambda x:x[1],reverse=True)
+
+    for i in range(max(len(dic1),len(dic2))):
+        if i<len(dic1) and i<len(dic2):
+            print ("{0:20}{1:20}".format(str(dic1[i]),str(dic2[i])))
+        elif i<len(dic1) and i>=len(dic2):
+            print ("{0:20}".format(str(dic1[i])))
+        elif i>=len(dic1) and i<len(dic2):
+            print ("{0:20}{1:20}".format('',str(dic2[i])))
+
     pass
 
 def get_audite(id_audite:str,manga:str,xml_dir='./xmls/'):
@@ -187,7 +212,8 @@ def get_audite(id_audite:str,manga:str,xml_dir='./xmls/'):
 #document,groupes,audites = read_xmls()
 #print(audites)
 #print(get_audite('107'))
-#print(stats(["manga Roméo et Juliette",range(100,200)]))
+print(stats(["roman Sirius",range(100,200)]))
+
                 
 
 

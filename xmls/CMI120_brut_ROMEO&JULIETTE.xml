@@ -1,0 +1,784 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<etude idEtude="120" sujet="manga Roméo et Juliette" groupesTemoins="4">
+   <question idQuestion="546" texteQuestion="Ce que le manga Roméo et Juliette évoque pour moi, c'est..." type="evocation">
+      <groupe idGroupe="1" nomGroupe="CE1">
+         <reponse idAudite="100">
+            <idee idIdee="1">Il est vraiment sympa mais un peu triste.</idee>
+         </reponse>
+         <reponse idAudite="101">
+            <idee idIdee="2">une histoire d'amour</idee>
+         </reponse>
+         <reponse idAudite="102">
+            <idee idIdee="3">Ils se sont beaucoup battus.</idee>
+         </reponse>
+         <reponse idAudite="103">
+            <idee idIdee="4">J'ai beaucoup aimé.</idee>
+         </reponse>
+         <reponse idAudite="104">
+            <idee idIdee="5">je ne sais pas</idee>
+         </reponse>
+         <reponse idAudite="105">
+            <idee idIdee="6">rien</idee>
+         </reponse>
+         <reponse idAudite="106">
+            <idee idIdee="7">de l'amour</idee>
+         </reponse>
+         <reponse idAudite="107">
+            <idee idIdee="8">je sais pas</idee>
+         </reponse>
+         <reponse idAudite="108">
+            <idee idIdee="9">rien</idee>
+         </reponse>
+         <reponse idAudite="109">
+            <idee idIdee="10">rien</idee>
+         </reponse>
+         <reponse idAudite="110">
+            <idee idIdee="11">Que c'est triste.</idee>
+         </reponse>
+         <reponse idAudite="111">
+            <idee idIdee="12">L'histoire commence à Vérone</idee>
+            <idee idIdee="13">Roméo est tombé amoureux de Juliette.</idee>
+         </reponse>
+      </groupe>
+      <groupe idGroupe="2" nomGroupe="CE2">
+         <reponse idAudite="112">
+            <idee idIdee="14">rien</idee>
+         </reponse>
+         <reponse idAudite="113">
+            <idee idIdee="15">une histoire d'amour.</idee>
+         </reponse>
+         <reponse idAudite="114">
+            <idee idIdee="16">il est bien</idee>
+         </reponse>
+         <reponse idAudite="115">
+            <idee idIdee="17">je trouve ça bien</idee>
+         </reponse>
+         <reponse idAudite="116">
+            <idee idIdee="18">J'ai très bien aimé.</idee>
+         </reponse>
+         <reponse idAudite="117">
+            <idee idIdee="19">il est bien</idee>
+         </reponse>
+         <reponse idAudite="118">
+            <idee idIdee="20">J'adore Roméo et Juliette car j'adore les mangas.</idee>
+         </reponse>
+         <reponse idAudite="119">
+            <idee idIdee="21">Les films de Disney des petits</idee>
+            <idee idIdee="22">et des autres mangas</idee>
+         </reponse>
+         <reponse idAudite="120">
+            <idee idIdee="23">il est bien</idee>
+            <idee idIdee="24">le relire parce que j'aime les mangas</idee>
+         </reponse>
+         <reponse idAudite="121">
+            <idee idIdee="25">Le relire</idee>
+            <idee idIdee="26">il est bien</idee>
+            <idee idIdee="27">et histoire d'amour.</idee>
+         </reponse>
+      </groupe>
+      <groupe idGroupe="3" nomGroupe="CM1">
+         <reponse idAudite="124">
+            <idee idIdee="28">de l'amour</idee>
+            <idee idIdee="29">de la haine</idee>
+            <idee idIdee="30">j'ai aimé juliette</idee>
+         </reponse>
+         <reponse idAudite="125">
+            <idee idIdee="31">rien</idee>
+         </reponse>
+         <reponse idAudite="126">
+            <idee idIdee="32">ça me fait penser à rien</idee>
+            <idee idIdee="33">mes émotions de la joie</idee>
+         </reponse>
+         <reponse idAudite="127">
+            <idee idIdee="34">C'est un grand amour</idee>
+         </reponse>
+         <reponse idAudite="128">
+            <idee idIdee="35">rien</idee>
+         </reponse>
+         <reponse idAudite="129">
+            <idee idIdee="36">de la joie</idee>
+            <idee idIdee="37">de l'amour</idee>
+            <idee idIdee="38">de la guerre</idee>
+            <idee idIdee="39">et de la haine.</idee>
+         </reponse>
+         <reponse idAudite="130">
+            <idee idIdee="40">Ce que le manga évoque pour moi c'est de la tristesse, ça me fait penser à mon arrière grand-mère qui est morte.</idee>
+            <idee idIdee="41">Et aussi de la gaîté. Ça m'a fait plaisir de lire le manga avec la classe. c'était des moments joyeux.</idee>
+         </reponse>
+         <reponse idAudite="131">
+            <idee idIdee="42">de la joie</idee>
+            <idee idIdee="43">de la bonne humeur</idee>
+            <idee idIdee="44">mais aussi de la tristesse que cela finisse comme ça</idee>
+            <idee idIdee="45">Cela me procure de la colère aussi car je pense que beaucoup de gens aimeraient une suite ou une plus belle fin.</idee>
+            <idee idIdee="46">J'imaginais une fin romantique et joyeuse.</idee>
+            <idee idIdee="47">J'aime ce livre car déjà les images sont belles</idee>
+            <idee idIdee="48">et aussi car il y a un petit marque page.</idee>
+            <idee idIdee="49">Et j'aime les mangas</idee>
+            <idee idIdee="50">et leur façon de dessiner à l'envers.</idee>
+         </reponse>
+         <reponse idAudite="132">
+            <idee idIdee="51">l'aventure</idee>
+            <idee idIdee="52">la provoc</idee>
+            <idee idIdee="53">le suspens</idee>
+            <idee idIdee="54">j'ai senti de la joie</idee>
+            <idee idIdee="55">de la colère</idee>
+            <idee idIdee="56">et de l'amour</idee>
+         </reponse>
+      </groupe>
+      <groupe idGroupe="4" nomGroupe="CM2">
+         <reponse idAudite="133">
+            <idee idIdee="57">ce que le manga Roméo et Juliette évoque pour moi c'est de la tristesse</idee>
+            <idee idIdee="58">et de la joie</idee>
+            <idee idIdee="59">et j'aime bien ce manga</idee>
+         </reponse>
+         <reponse idAudite="134">
+            <idee idIdee="60">ça me fait penser à des personnes (des copains) dans l'école</idee>
+            <idee idIdee="61">sinon un livre</idee>
+            <idee idIdee="62">une histoire d'amour (très belle)</idee>
+            <idee idIdee="63">ça me fait rêver</idee>
+            <idee idIdee="64">aussi j'adore les mangas car c'est comme une BD (bande dessinée)</idee>
+         </reponse>
+         <reponse idAudite="135">
+            <idee idIdee="65">une histoire d'amour impossible</idee>
+            <idee idIdee="66">une histoire dramatique</idee>
+            <idee idIdee="67">passionnant</idee>
+            <idee idIdee="68">triste</idee>
+            <idee idIdee="69">j'ai bien aimé les dessins magnifiques</idee>
+         </reponse>
+         <reponse idAudite="136">
+            <idee idIdee="70">c'est l'injustice</idee>
+            <idee idIdee="71">de la méchanceté</idee>
+            <idee idIdee="72">de la haine</idee>
+            <idee idIdee="73">de l'amour</idee>
+         </reponse>
+         <reponse idAudite="137">
+            <idee idIdee="74">l'injustice</idee>
+            <idee idIdee="75">ma propre vie</idee>
+            <idee idIdee="76">l'amour</idee>
+            <idee idIdee="77">les images sont magnifiques</idee>
+         </reponse>
+         <reponse idAudite="138">
+            <idee idIdee="78">un magnifique manga</idee>
+         </reponse>
+         <reponse idAudite="139">
+            <idee idIdee="79">j'ai pas d'idée</idee>
+         </reponse>
+         <reponse idAudite="140">
+            <idee idIdee="80">de la tristesse</idee>
+            <idee idIdee="81">et de la joie</idee>
+            <idee idIdee="82">et le drame</idee>
+         </reponse>
+         <reponse idAudite="141">
+            <idee idIdee="83">la tristesse</idee>
+            <idee idIdee="84">le drame</idee>
+            <idee idIdee="85">la joie</idee>
+            <idee idIdee="86">et l'amour</idee>
+         </reponse>
+         <reponse idAudite="142">
+            <idee idIdee="87">bien</idee>
+            <idee idIdee="88">tristesse</idee>
+            <idee idIdee="89">parfois de la joie</idee>
+            <idee idIdee="90">bien dessiné</idee>
+            <idee idIdee="91">un bon projet car j'aime les mangas</idee>
+         </reponse>
+         <reponse idAudite="143">
+            <idee idIdee="92">ça me fait penser à la tristesse de la vie</idee>
+            <idee idIdee="93">et l'injustice</idee>
+            <idee idIdee="94">le bonheur de l'amour</idee>
+            <idee idIdee="95">la façon dont on lit le livre est spéciale</idee>
+         </reponse>
+         <reponse idAudite="144">
+            <idee idIdee="96">de l'amour</idee>
+            <idee idIdee="97">et de la tragédie</idee>
+            <idee idIdee="98">et c'est triste</idee>
+            <idee idIdee="99">je trouve que les images son exceptionnelles, elles sont géniales</idee>
+            <idee idIdee="100">il y a plein d'émotions, quand je l'ai lu il y avait de l'amour, de la tristesse, de la joie et de l'étonnement et à tous les mangas</idee>
+         </reponse>
+         <reponse idAudite="145">
+            <idee idIdee="101">une histoire d'amour qui a mal tourné à cause d'un décalage horaire : Roméo est parti trop tôt de Mantoue, il a cru Juliette morte, ce qui a causé sa mort et celle de Juliette</idee>
+            <idee idIdee="102">c'est une belle histoire d'amour</idee>
+            <idee idIdee="103">j'aime bien lire les mangas parce que ça fait découvrir un nouveau style de lecture</idee>
+            <idee idIdee="104">et que j'ai beaucoup aimé les dessins</idee>
+            <idee idIdee="105">certaines images m'ont fait rire et d'autres un peu moins</idee>
+         </reponse>
+      </groupe>
+   </question>
+   <question idQuestion="726" texteQuestion="Ce que j'ai aimé dans le manga Roméo et Juliette, c'est..." type="like">
+      <groupe idGroupe="1" nomGroupe="CE1">
+         <reponse idAudite="100">
+            <idee idIdee="106">Que les deux familles se sont réconciliées.</idee>
+         </reponse>
+         <reponse idAudite="101">
+            <idee idIdee="107">le combat</idee>
+         </reponse>
+         <reponse idAudite="102">
+            <idee idIdee="108">Que bagarre pour rester ensemble Roméo et Juliette.</idee>
+         </reponse>
+         <reponse idAudite="103">
+            <idee idIdee="109">C'est quand Juliette et Roméo se sont rencontrés au bal masqué.</idee>
+         </reponse>
+         <reponse idAudite="104">
+            <idee idIdee="110">quand Tybalt il est mort</idee>
+         </reponse>
+         <reponse idAudite="105">
+            <idee idIdee="111">tout</idee>
+         </reponse>
+         <reponse idAudite="106">
+            <idee idIdee="112">c'est quand Roméo tue Tybalt</idee>
+         </reponse>
+         <reponse idAudite="107">
+            <idee idIdee="113">qu'ils sont amoureux.</idee>
+         </reponse>
+         <reponse idAudite="108">
+            <idee idIdee="114">tout</idee>
+         </reponse>
+         <reponse idAudite="109">
+            <idee idIdee="115">quand Juliette est morte</idee>
+         </reponse>
+         <reponse idAudite="110">
+            <idee idIdee="116">Les combats.</idee>
+            <idee idIdee="117">quand ils ont fait le plan avec Juliette.</idee>
+         </reponse>
+         <reponse idAudite="111">
+            <idee idIdee="118">Le début de l'histoire était très bien.</idee>
+         </reponse>
+      </groupe>
+      <groupe idGroupe="2" nomGroupe="CE2">
+         <reponse idAudite="112">
+            <idee idIdee="119">à la fin où les âmes montent au ciel.</idee>
+         </reponse>
+         <reponse idAudite="113">
+            <idee idIdee="120">c'est qu'il y a de la bagarre.</idee>
+         </reponse>
+         <reponse idAudite="114">
+            <idee idIdee="121">C'est quand les deux familles deviennent amies.</idee>
+         </reponse>
+         <reponse idAudite="115">
+            <idee idIdee="122">c'était bien émouvant</idee>
+            <idee idIdee="123">et romantique.</idee>
+         </reponse>
+         <reponse idAudite="116">
+            <idee idIdee="124">J'ai aimé les combats.</idee>
+         </reponse>
+         <reponse idAudite="117">
+            <idee idIdee="125">C'est le combat entre Roméo et Tybalt.</idee>
+         </reponse>
+         <reponse idAudite="118">
+            <idee idIdee="126">C'est quand Roméo a assassiné Tybalt car il avait tué Mercutio.</idee>
+         </reponse>
+         <reponse idAudite="119">
+            <idee idIdee="127">la bagarre</idee>
+         </reponse>
+         <reponse idAudite="120">
+            <idee idIdee="128">à la fin</idee>
+            <idee idIdee="129">et quand il y a eu la bagarre</idee>
+            <idee idIdee="130">et quand ils se tuent</idee>
+         </reponse>
+         <reponse idAudite="121">
+            <idee idIdee="131">La fin</idee>
+            <idee idIdee="132">les questions</idee>
+            <idee idIdee="133">le livre.</idee>
+         </reponse>
+      </groupe>
+      <groupe idGroupe="3" nomGroupe="CM1">
+         <reponse idAudite="124">
+            <idee idIdee="134">la famille de Roméo et de Juliette</idee>
+            <idee idIdee="135">j'ai aimé quand Roméo va au bal</idee>
+            <idee idIdee="136">et quand il y a la bataille</idee>
+            <idee idIdee="137">et quand la famille de Roméo et Juliette se réconcilie</idee>
+         </reponse>
+         <reponse idAudite="125">
+            <idee idIdee="138">les dessins</idee>
+            <idee idIdee="139">la fin du manga</idee>
+            <idee idIdee="140">les dialogues</idee>
+         </reponse>
+         <reponse idAudite="126">
+            <idee idIdee="141">les deux familles se disputent mais à la fin ils se réconcilient alors moi j'ai aimé</idee>
+         </reponse>
+         <reponse idAudite="127">
+            <idee idIdee="142">C'est qu'il y a des aventures</idee>
+         </reponse>
+         <reponse idAudite="128">
+            <idee idIdee="143">c'est l'histoire</idee>
+            <idee idIdee="144">et les personnages</idee>
+         </reponse>
+         <reponse idAudite="129">
+            <idee idIdee="145">les personnages</idee>
+            <idee idIdee="146">l'histoire</idee>
+            <idee idIdee="147">les dessins</idee>
+            <idee idIdee="148">les sentiments.</idee>
+            <idee idIdee="149">le duel</idee>
+            <idee idIdee="150">et la fin.</idee>
+         </reponse>
+         <reponse idAudite="130">
+            <idee idIdee="151">Ce que j'ai aimé dans le manga Roméo et Juliette c'est l'histoire</idee>
+            <idee idIdee="152">j'aime bien leur façon de dessiner</idee>
+            <idee idIdee="153">J'aime bien aussi les personnages.</idee>
+            <idee idIdee="154">J'ai bien aimé quand ils sont allés au bal masqué.</idee>
+         </reponse>
+         <reponse idAudite="131">
+            <idee idIdee="155">C'est l'histoire d'amour</idee>
+            <idee idIdee="156">les images</idee>
+            <idee idIdee="157">les personnages</idee>
+            <idee idIdee="158">les plans</idee>
+            <idee idIdee="159">les rêves.</idee>
+            <idee idIdee="160">Mais cela brise le coeur quand arrive la fin car on ne s'attend pas à des morts tragiques. Mais à des rêves et une histoire d'amour en secret.</idee>
+            <idee idIdee="161">J'ai adoré car j'aime les histoires d'amour, et les histoires glauques où un personnage meurt.</idee>
+            <idee idIdee="162">J'adore les mangas.</idee>
+            <idee idIdee="163">Mais aussi la couverture qui donne envie.</idee>
+         </reponse>
+         <reponse idAudite="132">
+            <idee idIdee="164">l'aventure</idee>
+            <idee idIdee="165">la provocation</idee>
+            <idee idIdee="166">le suspens</idee>
+            <idee idIdee="167">l'amitié</idee>
+            <idee idIdee="168">l'amour</idee>
+            <idee idIdee="169">et la déception</idee>
+            <idee idIdee="170">j'ai aimé quand Tybalt a embêté Mercutio</idee>
+            <idee idIdee="171">et Mercutio s'est fait tué</idee>
+            <idee idIdee="172">et Roméo s'est vengé</idee>
+         </reponse>
+      </groupe>
+      <groupe idGroupe="4" nomGroupe="CM2">
+         <reponse idAudite="133">
+            <idee idIdee="173">ce que j'ai aimé dans le manga Roméo et Juliette c'est quand Tybalt s'est battu avec Mercutio </idee>
+            <idee idIdee="174">et aussi quand ils sont allés au bal de Juliette</idee>
+         </reponse>
+         <reponse idAudite="134">
+            <idee idIdee="175">comme une BD (bande dessinée)</idee>
+            <idee idIdee="176">histoire d'amour</idee>
+            <idee idIdee="177">scènes de petites batailles :)</idee>
+            <idee idIdee="178">ça me fait rêver</idee>
+            <idee idIdee="179">c'est trop top !!!!!! :)</idee>
+         </reponse>
+         <reponse idAudite="135">
+            <idee idIdee="180">les dessins</idee>
+            <idee idIdee="181">les drames</idee>
+            <idee idIdee="182">l'histoire d'amour</idee>
+            <idee idIdee="183">j'ai mieux aimé le bal masqué</idee>
+            <idee idIdee="184">et le duel de Tybalt</idee>
+         </reponse>
+         <reponse idAudite="136">
+            <idee idIdee="185">c'est les dessins</idee>
+            <idee idIdee="186">l'histoire qui est belle</idee>
+            <idee idIdee="187">les personnages</idee>
+            <idee idIdee="188">le chapitre du Duel</idee>
+         </reponse>
+         <reponse idAudite="137">
+            <idee idIdee="189">l'amour</idee>
+            <idee idIdee="190">l'aide</idee>
+            <idee idIdee="191">le secret</idee>
+            <idee idIdee="192">le chapitre 2 (le Duel)</idee>
+            <idee idIdee="193">les dessins</idee>
+            <idee idIdee="194">le chapitre 1</idee>
+         </reponse>
+         <reponse idAudite="138">
+            <idee idIdee="195">les images</idee>
+            <idee idIdee="196">la fin est triste et joyeuse en même temps</idee>
+            <idee idIdee="197">Roméo et Juliette s'aiment vraiment : ils se sont tués car ils ne pouvaient pas vivre sans l'autre</idee>
+            <idee idIdee="198">l'histoire</idee>
+         </reponse>
+         <reponse idAudite="139">
+            <idee idIdee="199">les combats</idee>
+            <idee idIdee="200">l'histoire</idee>
+            <idee idIdee="201">les personnages</idee>
+         </reponse>
+         <reponse idAudite="140">
+            <idee idIdee="202">la fin quand ils meurent</idee>
+            <idee idIdee="203">et les dessins</idee>
+         </reponse>
+         <reponse idAudite="141">
+            <idee idIdee="204">les images</idee>
+            <idee idIdee="205">les expressions des personnages</idee>
+            <idee idIdee="206">toutes les émotions</idee>
+            <idee idIdee="207">la chute à la fin</idee>
+            <idee idIdee="208">l'amour éternel</idee>
+            <idee idIdee="209">l'amitié</idee>
+            <idee idIdee="210">le bal masqué</idee>
+            <idee idIdee="211">et le sens de la lecture (manga)</idee>
+         </reponse>
+         <reponse idAudite="142">
+            <idee idIdee="212">que Roméo est parfois drôle</idee>
+            <idee idIdee="213">c'est bien dessiné</idee>
+            <idee idIdee="214">l'histoire</idee>
+            <idee idIdee="215">ni long ni court</idee>
+            <idee idIdee="216">la maison des Capulet</idee>
+            <idee idIdee="217">la nourrisse est bizarre</idee>
+         </reponse>
+         <reponse idAudite="143">
+            <idee idIdee="218">c'est la fin, quand les deux familles se réconcilient</idee>
+            <idee idIdee="219">et j'ai aimé les questions parce que ça me faisais réfléchir et comprendre l'histoire</idee>
+         </reponse>
+         <reponse idAudite="144">
+            <idee idIdee="220">l'histoire est très intéressante</idee>
+            <idee idIdee="221">les pages sont faciles à lire</idee>
+            <idee idIdee="222">il y a de l'aventure et c'est ce que j'aime</idee>
+            <idee idIdee="223">et il y a plein d'émotions</idee>
+            <idee idIdee="224">donc il était génial</idee>
+            <idee idIdee="225">les personnes qui parlent</idee>
+            <idee idIdee="226">j'ai aimé également le moment quand Juliette fait tomber son éventail et que Roméo l'apporte</idee>
+            <idee idIdee="227">et quand la nourrice s'énerve, c'est rigolo</idee>
+         </reponse>
+         <reponse idAudite="145">
+            <idee idIdee="228">les dessins</idee>
+            <idee idIdee="229">les dialogues</idee>
+            <idee idIdee="230">la présentation (j'ai bien aimé lire de droite à gauche)</idee>
+            <idee idIdee="231">quand j'ai vu le moment où il y a des bulles de savon autour d'eux, ça m'a fait rire</idee>
+            <idee idIdee="232">quand Roméo, Mercutio, Benvolio vont au bal</idee>
+            <idee idIdee="233">quand Juliette refuse de se marier avec Paris</idee>
+            <idee idIdee="234">quand Juliette fait l'hypocrite</idee>
+            <idee idIdee="235">la nourrice de Juliette</idee>
+            <idee idIdee="236">que même si la fin est triste c'est quand même joyeux car les deux familles se réconcilient</idee>
+         </reponse>
+      </groupe>
+   </question>
+   <question idQuestion="851" texteQuestion="Ce que j'ai moins aimé dans le manga Roméo et Juliette, c'est..." type="dislike">
+      <groupe idGroupe="1" nomGroupe="CE1">
+         <reponse idAudite="100">
+            <idee idIdee="237">Quand Roméo a été tué.</idee>
+         </reponse>
+         <reponse idAudite="101">
+            <idee idIdee="238">je sais pas</idee>
+         </reponse>
+         <reponse idAudite="102">
+            <idee idIdee="239">Quand ils sont morts Roméo et Juliette.</idee>
+         </reponse>
+         <reponse idAudite="103">
+            <idee idIdee="240">C'est quand Roméo et Juliette sont morts.</idee>
+         </reponse>
+         <reponse idAudite="104">
+            <idee idIdee="241">quand Roméo et Juliette ils sont morts</idee>
+         </reponse>
+         <reponse idAudite="105">
+            <idee idIdee="242">rien</idee>
+         </reponse>
+         <reponse idAudite="106">
+            <idee idIdee="243">c'est quand Tybalt tue Mercutio</idee>
+         </reponse>
+         <reponse idAudite="107">
+            <idee idIdee="244">qu'ils sont morts.</idee>
+         </reponse>
+         <reponse idAudite="108">
+            <idee idIdee="245">quand Tybalt est mort</idee>
+         </reponse>
+         <reponse idAudite="109">
+            <idee idIdee="246">quand Roméo est mort</idee>
+         </reponse>
+         <reponse idAudite="110">
+            <idee idIdee="247">rien.</idee>
+         </reponse>
+         <reponse idAudite="111">
+            <idee idIdee="248">c'était à la fin de l'histoire quand il sont morts.</idee>
+            <idee idIdee="249">Et que les deux familles se bagarraient.</idee>
+         </reponse>
+      </groupe>
+      <groupe idGroupe="2" nomGroupe="CE2">
+         <reponse idAudite="112">
+            <idee idIdee="250">rien</idee>
+         </reponse>
+         <reponse idAudite="113">
+            <idee idIdee="251">rien.</idee>
+         </reponse>
+         <reponse idAudite="114">
+            <idee idIdee="252">Quand Juliette se tue.</idee>
+         </reponse>
+         <reponse idAudite="115">
+            <idee idIdee="253"> </idee>
+         </reponse>
+         <reponse idAudite="116">
+            <idee idIdee="254">J'ai tout aimé.</idee>
+         </reponse>
+         <reponse idAudite="117">
+            <idee idIdee="255">rien</idee>
+         </reponse>
+         <reponse idAudite="118">
+            <idee idIdee="256">rien</idee>
+         </reponse>
+         <reponse idAudite="119">
+            <idee idIdee="257">rien</idee>
+         </reponse>
+         <reponse idAudite="120">
+            <idee idIdee="258">quand il y a eu le mariage</idee>
+            <idee idIdee="259">et quand il est parti en cheval</idee>
+         </reponse>
+         <reponse idAudite="121">
+            <idee idIdee="260">J'ai tout aimé.</idee>
+         </reponse>
+      </groupe>
+      <groupe idGroupe="3" nomGroupe="CM1">
+         <reponse idAudite="124">
+            <idee idIdee="261">quand Juliette meurt</idee>
+            <idee idIdee="262">et quand Roméo part à l'église</idee>
+         </reponse>
+         <reponse idAudite="125">
+            <idee idIdee="263">rien</idee>
+         </reponse>
+         <reponse idAudite="126">
+            <idee idIdee="264">c'est à la fin quand ils se sont tués.</idee>
+         </reponse>
+         <reponse idAudite="127">
+            <idee idIdee="265">C'est qu'ils meurent à la fin</idee>
+         </reponse>
+         <reponse idAudite="128">
+            <idee idIdee="266">ce que j'ai le moins aimé c'est la fin du manga</idee>
+            <idee idIdee="267">puis la mort d'un personnage que j'aime (Benvolio)</idee>
+         </reponse>
+         <reponse idAudite="129">
+            <idee idIdee="268">écrire les réponses sur la feuille.</idee>
+            <idee idIdee="269">le début.</idee>
+         </reponse>
+         <reponse idAudite="130">
+            <idee idIdee="270">Ce que j'ai moins aimé dans le manga Roméo et Juliette c'est la fin, elle est triste</idee>
+            <idee idIdee="271">c'est aussi quand Mercutio meurt.</idee>
+         </reponse>
+         <reponse idAudite="131">
+            <idee idIdee="272">Je n'ai pas aimé le fait que les personnages principaux meurent.</idee>
+            <idee idIdee="273">Aussi je ne suis pas contente que comme les personnages meurent il n'y a pas de tome suivant. J'aurais beaucoup aimé un autre tome car à la fin, il reste du suspens et ça pour partir il faut un autre tome.</idee>
+         </reponse>
+         <reponse idAudite="132">
+            <idee idIdee="274">ce que j'ai moins aimé c'est quand Roméo et Juliette s'embrassent.</idee>
+            <idee idIdee="275">ou quand Roméo se fait bannir</idee>
+         </reponse>
+      </groupe>
+      <groupe idGroupe="4" nomGroupe="CM2">
+         <reponse idAudite="133">
+            <idee idIdee="276">ce que j'ai moins aimé dans le manga Roméo et Juliette c'est quand Roméo et Juliette sont morts</idee>
+         </reponse>
+         <reponse idAudite="134">
+            <idee idIdee="277">c'est les interrogations avec la maîtresse (pas celle-ci, hein) car pour moi le lire ce n'est pas un travail et du coup c'est dommage de transformer ça en travail mais c'est top :)</idee>
+         </reponse>
+         <reponse idAudite="135">
+            <idee idIdee="278">j'ai moins aimé l'exil de Roméo à Mantoue, je pensais qu'ils ne se reverraient pas</idee>
+         </reponse>
+         <reponse idAudite="136">
+            <idee idIdee="279">c'est le travail après avoir lu le livre</idee>
+         </reponse>
+         <reponse idAudite="137">
+            <idee idIdee="280">la mort de nos héros</idee>
+            <idee idIdee="281">la haine</idee>
+            <idee idIdee="282">les questions sur les feuilles</idee>
+         </reponse>
+         <reponse idAudite="138">
+            <idee idIdee="283">j'ai moins aimé quand il fallait répondre aux questions</idee>
+         </reponse>
+         <reponse idAudite="139">
+            <idee idIdee="284">les images en noir et blanc</idee>
+            <idee idIdee="285">le travail après avoir lu </idee>
+            <idee idIdee="286">Tybalt</idee>
+         </reponse>
+         <reponse idAudite="140">
+            <idee idIdee="287">les questions à écrire</idee>
+         </reponse>
+         <reponse idAudite="141">
+            <idee idIdee="288">la haine</idee>
+            <idee idIdee="289">le duel</idee>
+            <idee idIdee="290">la mort de Roméo et Juliette</idee>
+            <idee idIdee="291">Paris</idee>
+            <idee idIdee="292">Tybalt</idee>
+            <idee idIdee="293">la mort de Mercutio</idee>
+            <idee idIdee="294">l'exil à Mantoue</idee>
+            <idee idIdee="295">la méchanceté</idee>
+            <idee idIdee="296">les bagarres entre les deux familles</idee>
+            <idee idIdee="297">et le moment où Roméo pénètre dans le tombeau des Capulet</idee>
+         </reponse>
+         <reponse idAudite="142">
+            <idee idIdee="298">la fin se termine mal</idee>
+            <idee idIdee="299">que le copain de Roméo meurt</idee>
+         </reponse>
+         <reponse idAudite="143">
+            <idee idIdee="300">je n'ai pas aimé quand il y avait des morts dans le manga</idee>
+            <idee idIdee="301">les questions où c'est marqué les pages et pas de questions comme : qu'est-ce qu'il se passe entre les pages</idee>
+         </reponse>
+         <reponse idAudite="144">
+            <idee idIdee="302">c'est quand ils meurent que je n'ai pas aimé</idee>
+            <idee idIdee="303">et quand les deux familles se disputent car c'est triste</idee>
+            <idee idIdee="304">et quand il y a des bagarres de mort</idee>
+            <idee idIdee="305">et que les images ne sont pas en couleurs, ça c'est la chose que j'ai moins aimé</idee>
+            <idee idIdee="306">et qu'il n'y a pas assez d'écriture</idee>
+            <idee idIdee="307">et le livre est un peu trop petit</idee>
+         </reponse>
+         <reponse idAudite="145">
+            <idee idIdee="308">certains personnages : Tybalt</idee>
+            <idee idIdee="309">Paris</idee>
+            <idee idIdee="310">et tout le temps la maman de Juliette</idee>
+            <idee idIdee="311">les moments où les gens s'entretuent</idee>
+            <idee idIdee="312">quand on devait répondre aux questions en classe, pour moi ça allait trop vite, j'aurais préféré qu'on me demande ce que j'ai pensé de la situation au lieu de devoir la décrire, écrire qui fait quoi, etc.</idee>
+            <idee idIdee="313">les dessins en noir et blanc</idee>
+         </reponse>
+      </groupe>
+   </question>
+   <question idQuestion="1861" texteQuestion="Ce que j’aurais aimé trouver dans le manga Roméo et Juliette, c'est..." type="expectation">
+      <groupe idGroupe="1" nomGroupe="CE1">
+         <reponse idAudite="100">
+            <idee idIdee="314">Je ne sais pas du tout.</idee>
+         </reponse>
+         <reponse idAudite="101">
+            <idee idIdee="315">du foot</idee>
+         </reponse>
+         <reponse idAudite="102">
+            <idee idIdee="316">Que les Montaigu et les Capulet se battent.</idee>
+         </reponse>
+         <reponse idAudite="103">
+            <idee idIdee="317">j'aurais penser que Roméo pouvais revenir sans être tué.</idee>
+         </reponse>
+         <reponse idAudite="104">
+            <idee idIdee="318">je ne sais pas</idee>
+         </reponse>
+         <reponse idAudite="105">
+            <idee idIdee="319">c'est que Roméo et Juliette soient immortels</idee>
+         </reponse>
+         <reponse idAudite="106">
+            <idee idIdee="320">si Benvolio pourrait mourir</idee>
+         </reponse>
+         <reponse idAudite="107">
+            <idee idIdee="321">rien</idee>
+         </reponse>
+         <reponse idAudite="108">
+            <idee idIdee="322">qu'ils ne soient pas morts</idee>
+         </reponse>
+         <reponse idAudite="109">
+            <idee idIdee="323">rien</idee>
+         </reponse>
+         <reponse idAudite="110">
+            <idee idIdee="324">La maison de Roméo.</idee>
+            <idee idIdee="325">Que Tybalt ne soit pas mort.</idee>
+         </reponse>
+         <reponse idAudite="111">
+            <idee idIdee="326">Rien.</idee>
+         </reponse>
+      </groupe>
+      <groupe idGroupe="2" nomGroupe="CE2">
+         <reponse idAudite="112">
+            <idee idIdee="327">rien</idee>
+         </reponse>
+         <reponse idAudite="113">
+            <idee idIdee="328">j'aimerais bien plus de pages.</idee>
+         </reponse>
+         <reponse idAudite="114">
+            <idee idIdee="329">Je sais pas.</idee>
+         </reponse>
+         <reponse idAudite="115">
+            <idee idIdee="330">ce que j'aurais aimé dans le manga ça serait à la fin qu'ils ne meurent pas</idee>
+            <idee idIdee="331">et qu'ils passent une vie très bien.</idee>
+         </reponse>
+         <reponse idAudite="116">
+            <idee idIdee="332">Je sais pas.</idee>
+         </reponse>
+         <reponse idAudite="117">
+            <idee idIdee="333">Je ne sais pas</idee>
+         </reponse>
+         <reponse idAudite="118">
+            <idee idIdee="334">Pokémon</idee>
+         </reponse>
+         <reponse idAudite="119">
+            <idee idIdee="335">je ne sais pas</idee>
+         </reponse>
+         <reponse idAudite="120">
+            <idee idIdee="336">qu'ils se remettent ensemble avec leurs parents</idee>
+            <idee idIdee="337">et que les parents disent oui à la fin pour qu'ils se mettent ensemble</idee>
+         </reponse>
+         <reponse idAudite="121">
+            <idee idIdee="338">De l'aventure</idee>
+            <idee idIdee="339">et voir plus de scènes</idee>
+            <idee idIdee="340">et qu'ils remontent le temps</idee>
+            <idee idIdee="341">et qu'il n'y ait pas de mort.</idee>
+         </reponse>
+      </groupe>
+      <groupe idGroupe="3" nomGroupe="CM1">
+         <reponse idAudite="124">
+            <idee idIdee="342">que Roméo et Juliette ne meurent pas</idee>
+            <idee idIdee="343">plus de batailles</idee>
+            <idee idIdee="344">et que la famille de Roméo et Juliette soit plutôt amie</idee>
+            <idee idIdee="345">qui vont en prison</idee>
+         </reponse>
+         <reponse idAudite="125">
+            <idee idIdee="346">une meilleure rencontre</idee>
+            <idee idIdee="347">la mère de Roméo</idee>
+         </reponse>
+         <reponse idAudite="126">
+            <idee idIdee="348">Non rien</idee>
+         </reponse>
+         <reponse idAudite="127">
+            <idee idIdee="349">C'est rien</idee>
+         </reponse>
+         <reponse idAudite="128">
+            <idee idIdee="350">je ne sais pas</idee>
+         </reponse>
+         <reponse idAudite="129">
+            <idee idIdee="351">un peu plus de suspens.</idee>
+         </reponse>
+         <reponse idAudite="130">
+            <idee idIdee="352">Ce que j'aurais aimé trouver dans le manga c'est que moi, je croyais que le plan de Juliette marchait... eh ben non.</idee>
+         </reponse>
+         <reponse idAudite="131">
+            <idee idIdee="353">J'aurais aimé une plus belle histoire d'amour qui ne se finirait pas aussi mal. J'en suis très déçue.</idee>
+            <idee idIdee="354">J'aurais aimé un peu plus de mystère et de suspens.</idee>
+            <idee idIdee="355">Aussi j'aurais aimé qu'il y ait moins de morts. Car ce manga est beau mais aussi glauque.</idee>
+         </reponse>
+         <reponse idAudite="132">
+            <idee idIdee="356">rien ne manquait</idee>
+         </reponse>
+      </groupe>
+      <groupe idGroupe="4" nomGroupe="CM2">
+         <reponse idAudite="133">
+            <idee idIdee="357">ce que j'aurais aimé trouver dans le manga Roméo et Juliette c'est rien</idee>
+         </reponse>
+         <reponse idAudite="134">
+            <idee idIdee="358">il ne me manque rien</idee>
+            <idee idIdee="359">sauf la suite mais ça, il y en aura à l'infini</idee>
+         </reponse>
+         <reponse idAudite="135">
+            <idee idIdee="360">rien, le manga était passionnant et triste à la fois mais trouver Roméo et Juliette ne fantômes les rendraient heureux, les graphismes impressionnants</idee>
+         </reponse>
+         <reponse idAudite="136">
+            <idee idIdee="361">c'est que je voulais avoir la fin après que les familles se réconcilient</idee>
+         </reponse>
+         <reponse idAudite="137">
+            <idee idIdee="362">ce livre est déjà parfait</idee>
+         </reponse>
+         <reponse idAudite="138">
+            <idee idIdee="363">je ne sais pas</idee>
+         </reponse>
+         <reponse idAudite="139">
+            <idee idIdee="364">des images en couleurs</idee>
+            <idee idIdee="365">la mort d'aucun personnage à part Tybalt</idee>
+            <idee idIdee="366">et que les familles s'entendent plus tôt dans l'histoire</idee>
+         </reponse>
+         <reponse idAudite="140">
+            <idee idIdee="367">qu'il y ait moins de morts</idee>
+            <idee idIdee="368">et une suite</idee>
+         </reponse>
+         <reponse idAudite="141">
+            <idee idIdee="369">la paix</idee>
+            <idee idIdee="370">la gentillesse</idee>
+            <idee idIdee="371">que Roméo et Juliette puissent vivre en paix longtemps </idee>
+            <idee idIdee="372">la fin des disputes entre les deux familles plus tôt</idee>
+            <idee idIdee="373">et la vie de tous les personnages (des deux familles)</idee>
+         </reponse>
+         <reponse idAudite="142">
+            <idee idIdee="374">que à la fin Roméo et Juliette revivent</idee>
+            <idee idIdee="375">qu'il y ait des choses drôles</idee>
+            <idee idIdee="376">qu'il y ait des couleurs</idee>
+         </reponse>
+         <reponse idAudite="143">
+            <idee idIdee="377">il était super bien je n'ai rien à ajouter</idee>
+         </reponse>
+         <reponse idAudite="144">
+            <idee idIdee="378">des images en couleurs</idee>
+            <idee idIdee="379">plus d'actions</idee>
+            <idee idIdee="380">plus de gens qui parlent</idee>
+            <idee idIdee="381">plus d'images</idee>
+            <idee idIdee="382">et qu'il y ait moins d'amours</idee>
+            <idee idIdee="383">et plus de suspens</idee>
+            <idee idIdee="384">plus de personnes qui parlent</idee>
+         </reponse>
+         <reponse idAudite="145">
+            <idee idIdee="385">des situations un peu plus précises</idee>
+            <idee idIdee="386">et à un moment j'ai trouvé que c'était un peu &quot;gnangnan&quot;</idee>
+            <idee idIdee="387">parfois, même si c'est un style, j'ai trouvé que les traits autour des images faisaient un peu brouillon, j'aurais aimé, pour certains dessins, qu'ils soient plus simples</idee>
+            <idee idIdee="388">j'aurais aimé voir la maison Montaigu</idee>
+            <idee idIdee="389">des images en couleurs</idee>
+         </reponse>
+      </groupe>
+   </question>
+</etude>

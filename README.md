@@ -6,8 +6,12 @@ Data: Middle and high-school students collection of book reviews. XML encoded co
 
 Goals: Provide free access to the collected and annotated data for future research.
 
-// Database connection configuration
+Database connection configuration: please use your own access info.
+
 $servername = "localhost";
+
 $username = "...";
+
 $password = "...";
+
 $dbname = "argiles";

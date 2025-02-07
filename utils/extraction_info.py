@@ -129,6 +129,12 @@ def read_xmls(xml_dir = "../xmls/"):
     except KeyError as err:
         print("Erreur : ",err)
         raise
+
+def to_string(text):
+    try:
+        return str(text)
+    except Exception:
+        return ""
     
 def stats(ids_audites):
     """
@@ -149,17 +155,24 @@ def stats(ids_audites):
 
     document,groupes,audites = read_xmls()
     ongoing_doc = ids_audites[0]
-    questions = {}
+    categories = []
+    #questions = {}
     dict = {}
     dict_lemmatized = {}
 
     for id in ids_audites[1]:
         if str(id) in audites.keys() and ongoing_doc in audites[str(id)]['reponses'].keys():
             for reponse in audites[str(id)]['reponses'][ongoing_doc]:
-                if reponse not in questions.keys():
-                    questions[reponse] = []
+                #if reponse not in questions.keys():
+                #    questions[reponse] = []
+                if reponse not in dict.keys():
+                    dict[reponse] = {}
+                if reponse not in categories:
+                    categories.append(reponse)
+                if reponse not in dict_lemmatized.keys():
+                    dict_lemmatized[reponse] = {}
                 for idee in audites[str(id)]['reponses'][ongoing_doc][reponse]:
-                    questions[reponse].append(idee)
+                #    questions[reponse].append(idee)
                     doc = nlp(idee)
                     for tok in doc:
                         token = str(tok)
@@ -167,28 +180,34 @@ def stats(ids_audites):
 
                         token = token.strip(' ')
                         if token.lower() not in stoplist and token[:-1].lower() not in stoplist and lemma not in string.punctuation:
-                            if token in dict.keys():
-                                dict[token] +=1
+                            if token in dict[reponse].keys():
+                                dict[reponse][token] +=1
                             else:
-                                dict[token] = 1
+                                dict[reponse][token] = 1
 
-                            if lemma in dict_lemmatized.keys():
-                                dict_lemmatized[lemma] += 1
+                            if lemma in dict_lemmatized[reponse].keys():
+                                dict_lemmatized[reponse][lemma] += 1
                             else:
-                                dict_lemmatized[lemma] = 1
+                                dict_lemmatized[reponse][lemma] = 1
     
-    for cat in questions.keys():
-        questions[cat]
-    dic1 = sorted([[x,dict[x]] for x in dict.keys()],key=lambda x:x[1],reverse=True)
-    dic2 = sorted([[x,dict_lemmatized[x]] for x in dict_lemmatized.keys()],key=lambda x:x[1],reverse=True)
+    dic1, dic2 = {}, {}
 
-    for i in range(max(len(dic1),len(dic2))):
-        if i<len(dic1) and i<len(dic2):
-            print ("{0:20}{1:20}".format(str(dic1[i]),str(dic2[i])))
-        elif i<len(dic1) and i>=len(dic2):
-            print ("{0:20}".format(str(dic1[i])))
-        elif i>=len(dic1) and i<len(dic2):
-            print ("{0:20}{1:20}".format('',str(dic2[i])))
+    for cat in categories:
+        dic1[cat] = sorted([[x,dict[cat][x]] for x in dict[cat].keys()],key=lambda x:x[1],reverse=True)
+        dic2[cat] = sorted([[x,dict_lemmatized[cat][x]] for x in dict_lemmatized[cat].keys()],key=lambda x:x[1],reverse=True)
+    
+    nb_lignes = 0
+    for cat in dic1.keys():
+        nb_lignes = max(nb_lignes,len(dic1[cat]))
+    for cat in dic2.keys():
+        nb_lignes = max(nb_lignes,len(dic2[cat]))
+
+    print ("{0:^40}{1:^40}{2:^40}{3:^40}".format(f"--- {categories[0]} ---",f"--- {categories[1]} ---",f"--- {categories[2]} ---",f"--- {categories[3]} ---"))
+    for i in range(nb_lignes):
+        try:
+            print ("{0:20}{1:20}{2:20}{3:20}{4:20}{5:20}{6:20}{7:20}".format(to_string(dic1[categories[0]][i]),to_string(dic2[categories[0]][i]),to_string(dic1[categories[1]][i]),to_string(dic2[categories[1]][i]),to_string(dic1[categories[2]][i]),to_string(dic2[categories[2]][i]),to_string(dic1[categories[3]][i]),to_string(dic2[categories[3]][i])))
+        except:
+            pass
 
     pass
 

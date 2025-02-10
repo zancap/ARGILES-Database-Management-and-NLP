@@ -15,3 +15,7 @@ $username = "...";
 $password = "...";
 
 $dbname = "argiles";
+
+Utiliser php.info pour avoir les informations techniques relatives à la base de données.
+
+La taille maximale des fichiers que la BD peut accepter est fixé à 2M.

@@ -212,7 +212,7 @@ if (!$result) {
     <!-- L'en-tete -->
     <header>
         <h1><?= htmlspecialchars($title) ?></h1>
-		<a href="index.html" class="btn-back">← Retour à la page principale</a>
+		<a href="index.html" class="btn-back">← Retour à l'accueil</a>
     </header>
     <!-- Le contenu principal -->
     <div class="container">

@@ -7,25 +7,54 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
-    /* Sidebar (same as visualization page) */
+  /* Background */
+	body {
+	  font-family: 'Roboto', sans-serif;
+	  background: linear-gradient(160deg, #d8a7b1 10%, #2f5d62 90%); /* Soft gradient */
+	  background-attachment: fixed; /* Ensures the background stays in place */
+	  color: #333;
+	  margin: 0;
+	  padding: 0;
+	  position: relative;
+	}
+
+	/* Readability */
+	body::before {
+	  content: "";
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  background: rgba(255, 255, 255, 0.4);
+	  z-index: -1;
+	}
+
+	/* Wave deco */
+	.wave {
+	  position: absolute;
+	  bottom: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 120px;
+	  background: url('img/wave.svg') repeat-x;
+	  opacity: 0.3;
+	  z-index: 1;
+	}
+    
+    /* Sidebar */
     .sidebar {
       width: 250px;
       position: fixed;
       top: 0;
-      left: 0;
+      left: -250px;
       height: 100%;
       background-color: #2c3e50;
       color: #fff;
       padding: 20px;
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
       z-index: 1000;
+      transition: left 0.3s ease-in-out;
     }
     .sidebar a {
       color: #fff;
@@ -37,112 +66,284 @@
     .sidebar a:hover {
       text-decoration: underline;
     }
+
+    /* Sidebar Toggle */
+    #menuToggle {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      background-color: #5a7d6e;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
     /* Main Content */
     .content {
-      margin-left: 270px; /* Sidebar width (250px) + spacing */
+      margin-left: 20px;
       padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: left;
     }
-    /* Header Section (rounded, delimited) */
+
+    /* Header */
     header {
       background-color: #5a7d6e;
       color: #fff;
       padding: 40px 20px;
-      text-align: center;
       border-radius: 8px;
       margin-bottom: 20px;
-	  margin-top: 20px;
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-top: 20px;
+	  color: #fff;
+	  text-align: center;
     }
+	header h1, header h2, header h3, header h4 {
+	  color: #fff !important; 
+	}
+
     /* Project Description */
     #about {
       margin-bottom: 40px;
     }
-    #about h2 {
+    #livres h2 {
       color: #2c3e50;
       margin-bottom: 15px;
     }
-    #about a {
-      color: #88b097;
-      text-decoration: none;
+    #about ul {
+      list-style: none;
+      padding-left: 0;
     }
-    #about a:hover {
-      text-decoration: underline;
+    #about ul li::before {
+      content: "\2605"; /* Green star symbol */
+      color: #5a7d6e;
+      font-size: 18px;
+      padding-right: 10px;
     }
+	h1, h2, h3, h4 {
+	  color: #2c3e50;
+	}
+	
+	/* Lists */
+	.custom-list {
+	  list-style: none;
+	  padding-left: 0;
+	}
+	.custom-list li::before {
+	  content: "★"; /* Green star symbol */
+	  color: #5a7d6e;
+	  font-size: 18px;
+	  padding-right: 10px;
+	}
+
+	/* Text size */
+	body {
+	  font-size: 18px; 
+	  line-height: 1.6; 
+	}
+
+    /* Images */
+    .book-images, .manga-images {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .book-images img, .manga-images img {
+      width: 200px;
+      border-radius: 8px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      margin-bottom: 15px;
+    }
+	
+	/* Image behaviour */
+	.image-hover {
+	  transition: transform 0.3s ease-in-out; 
+	}
+
+	.image-hover:hover {
+	  transform: scale(1.3); 
+	}
+
     /* Footer */
     footer {
       background-color: #2c3e50;
       color: #fff;
       text-align: center;
-	  padding: 40px 20px; /* Matches header padding */
+      padding: 40px 20px;
       margin-top: 20px;
-      max-width: 1000px;  /* Matches header width */
-      margin-left: auto;
-      margin-right: auto;
-      border-radius: 8px; /* Matches header border-radius */
-
-    }
-    footer a {
-      color: #88b097;
-      text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
-  <!-- Floating Sidebar -->
-  <div class="sidebar">
-    <h4>Menu</h4>
-    <a href="#about">Accueil</a>
-	<a href="functions.html">Explorez les fonctionnalites</a>
-	<a href="database_visualization.php">Contenu de la base de données</a>
-	<a href="pdf_visualization.php">Visualisation des copies d'élèves originales</a>
+
+  <!-- Sidebar Toggle Button -->
+  <div id="menuToggle" onclick="toggleSidebar()">☰ Menu</div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <br>
+	<br>
+    <a href="functions.html">Explorez les fonctionnalités</a>
+    <a href="database_visualization.php">Contenu de la base de données</a>
+    <a href="pdf_visualization.php">Visualisation des copies d'élèves originales</a>
     <a href="upload.html">Téléversez des fichiers</a>
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Licence</a>
   </div>
 
   <!-- Main Content -->
   <div class="content">
-    <!-- Header Section -->
     <header>
-      <h1>Bienvenue sur le projet ARGILES</h1>
+      <h1>Projet ARGILES</h1>
       <p>Un regard moderne sur les avis littéraires des élèves</p>
     </header>
 
-    <!-- Project Description Section -->
     <section id="about">
-      <h2>À propos du projet ARGILES</h2>
+	  <br>
+      <h2>À propos du projet</h2>
+	  <br>
       <p>
-        Le projet ARGILES collecte et analyse les avis des collégiens et lycéens sur deux œuvres : 
-        <em>Sirius</em> de Stéphane Servant et la version manga de <em>Roméo et Juliette</em> illustrée par Megumi Isakawa.
-        <br>
-        Découvrez davantage sur l'auteur sur son site officiel : 
-        <a href="https://stephaneservant.fr/" target="_blank">stephaneservant.fr</a>.
-        <br>
-        Le manga <em>Roméo et Juliette</em> est publié par 
-        <a href="https://www.nobi-nobi.fr/" target="_blank">Nobi Nobi</a>.
-      </p>
+        Le projet <strong>ARGILES</strong> (Analyse des Ressentis auprès de Jeunes Lecteurs Scolaires) explore comment les élèves perçoivent des œuvres littéraires.
+		Il s'appuie sur les niveaux scolaires du <strong>système éducatif français</strong>, où les élèves évoluent progressivement dans leur apprentissage de la lecture et de l’analyse des textes.
+		L’objectif était d’adapter les lectures aux compétences et aux sensibilités des élèves selon leur âge, tout en recueillant à l'écrit leurs impressions et analyses à travers des questions spécifiques.
+	  </p>
+	  <ul class="custom-list">
+	  <li><strong>En école primaire (CE1, CE2, CM1, CM2)</strong></li>
+	  <p>
+		Ces classes regroupent des enfants âgés de <strong>7 à 11 ans</strong>. À cet âge, les élèves développent encore leur maîtrise de la lecture et commencent à analyser les récits de manière plus approfondie. 
+		La version <strong>manga de <em>Roméo et Juliette</em></strong> a été choisie pour eux, car elle associe texte et image, facilitant ainsi la compréhension de l’intrigue tout en rendant la lecture plus engageante et accessible.
+	  </p>
+	  <li><strong>En classe de Quatrième (Collège, 13-14 ans)</strong></li>
+	  <p>
+		Cette classe fait partie du cycle 4 du collège et s’adresse aux adolescents en pleine structuration de leur pensée critique. À cet âge, ils sont capables de lectures plus complexes et d’analyses plus approfondies.
+		Le roman <strong><em>Sirius</em> de Stéphane Servant</strong> a été sélectionné pour eux, car il propose une réflexion riche sur des thèmes comme la survie, l’écologie et la résilience, correspondant aux capacités analytiques des élèves de cet âge.
+	  </p>
+	  </ul>
+	  
+	  <br>
+      <h3>Oeuvres étudiées :</h3>
+      <div class="book-images">
+        <img src="img/sirius.jpg" alt="Couverture Sirius" class="image-hover" width="300">
+        <img src="img/romeo_et_juliette.jpg" alt="Couverture Roméo et Juliette" class="image-hover" width="300">
+      </div>
+      <p>Les élèves ont répondu à quatre types de questions :</p>
+      <ul>
+        <li><strong>Évocation :</strong> Ce que l'œuvre leur évoque spontanément.</li>
+        <li><strong>Adhésion :</strong> Ce qu'ils ont aimé.</li>
+        <li><strong>Rejet :</strong> Ce qu'ils ont moins aimé.</li>
+        <li><strong>Attentes :</strong> Ce qu’ils auraient aimé voir différemment.</li>
+      </ul>
+	  <br>
+      <h4>Quelques extraits du manga Romeo et Juliette :</h4>
+      <div class="manga-images">
+        <img src="img/manga1.jpg" alt="Extrait Manga 1" class="image-hover" width="300">
+        <img src="img/manga2.jpg" alt="Extrait Manga 2" class="image-hover" width="300">
+        <img src="img/manga4.jpg" alt="Extrait Manga 4" class="image-hover" width="300">
+      </div>
+	  <br>
+	  <h4>Quelques extraits de Sirius :</h4>
+      <div class="manga-images">
+        <img src="img/sirius1.jpg" alt="Extrait Sirius 1" class="image-hover" width="300">
+        <img src="img/sirius2.jpg" alt="Extrait Sirius 2" class="image-hover" width="300">
+      </div>
     </section>
+	
+	<section id="livres">
+		<br>
+		<h2>À propos des livres</h2>
+		<br>
 
-    <!-- ADD INFO !!! -->
+		<ul class="custom-list">
+			<li><strong>Sirius – Stéphane Servant (Éditions Épik, 2017)</strong></li>
+		</ul>
+		<p>
+			<em>Sirius</em> est un roman de <strong>littérature jeunesse</strong> écrit par Stéphane Servant, publié en 2017 dans la collection Épik des éditions Rouergue. 
+			Ce récit post-apocalyptique mêle aventure, réflexion écologique et quête initiatique.
+		</p>
+		<p>
+			L’histoire suit <strong>Avril</strong> et son petit frère <strong>Kid</strong>, qui tentent de survivre dans un monde dévasté où la civilisation humaine a sombré. Leur seul compagnon est <strong>Sirius</strong>, un cochon qui les accompagne dans leur périple.
+			Mais dans cet univers hostile, des forces mystérieuses semblent être à l’œuvre, et Avril devra faire preuve de courage et de détermination pour protéger son frère et découvrir la vérité sur ce qui a conduit l’humanité à sa perte.
+		</p>
+		<p><strong>Thèmes abordés :</strong></p>
+		<ul class="custom-list">
+			<li>Écologie et catastrophe environnementale</li>
+			<li>Survie et entraide</li>
+			<li>Résilience et passage à l’âge adulte</li>
+			<li>Quête d’identité et transmission</li>
+		</ul>
+		<p>
+			Stéphane Servant propose un récit sombre et poétique, dans un style immersif qui plonge le lecteur dans une ambiance à la fois contemplative et angoissante.
+			Ce roman interroge notre rapport à la nature et notre responsabilité collective face aux crises écologiques.
+		</p>
+		<p>
+			<strong>En savoir plus sur l’auteur :</strong> 
+			<a href="https://stephaneservant.fr/" target="_blank">stephaneservant.fr</a>
+		</p>
+		<p>
+			<strong>Édition utilisée :</strong> 
+			<a href="https://www.lerouergue.com/catalogue/sirius/" target="_blank">Éditions Épik - Rouergue</a>
+		</p>
 
-    <!-- Footer Section -->
-    <footer id="license">
+		<br>
+
+		<ul class="custom-list">
+			<li><strong>Roméo et Juliette – Version Manga (Megumi Isakawa, Éditions Nobi Nobi)</strong></li>
+		</ul>
+		<p>
+			Cette adaptation en manga du classique de <strong>William Shakespeare</strong> est illustrée par Megumi Isakawa et publiée par Nobi Nobi.
+		</p>
+		<p>
+			Le récit reprend fidèlement l’intrigue tragique de Roméo et Juliette, tout en l’adaptant à un format plus visuel et dynamique, particulièrement accessible aux jeunes lecteurs.
+			Les dessins expressifs, les mises en scène théâtrales et la mise en page fluide rendent le drame shakespearien plus immersif et captivant.
+		</p>
+		<p><strong>Particularités de cette adaptation :</strong></p>
+		<ul class="custom-list">
+			<li>Un style graphique détaillé et expressif</li>
+			<li>Un texte fidèle à la pièce originale mais simplifié pour les jeunes lecteurs</li>
+			<li>Une mise en page dynamique qui facilite la lecture</li>
+		</ul>
+		<p>
+			Grâce à ce format, les élèves peuvent découvrir Shakespeare sous un angle nouveau, tout en bénéficiant du soutien visuel du manga pour comprendre les émotions et les enjeux de l’histoire.
+		</p>
+		<p>
+			<strong>Éditeur du manga :</strong> 
+			<a href="https://www.nobi-nobi.fr/" target="_blank">Nobi Nobi</a>
+		</p>
+		<p>
+			<strong>Fiche du livre :</strong> 
+			<a href="https://www.nobi-nobi.fr/livre/romeo-et-juliette-9782918857778/" target="_blank">Roméo et Juliette - Manga</a>
+		</p>
+
+		<br>
+
+		<h4>Pourquoi ces œuvres dans le projet ARGILES ?</h4>
+		<p>
+			Le choix de ces livres repose sur l’âge des élèves et leur capacité d’analyse :
+		</p>
+		<ul class="custom-list">
+			<li>Les collégiens de quatrième sont capables de lire un roman exigeant comme <em>Sirius</em>, qui traite de thèmes profonds et engageants.</li>
+			<li>Les élèves de primaire (CE1 à CM2) bénéficient d’une introduction à un classique de la littérature anglophone sous une forme illustrée, leur permettant d’en saisir plus facilement les émotions et les enjeux narratifs.</li>
+		</ul>
+	</section>
+
+    <footer>
       <p>© 2025 Projet ARGILES | Université Grenoble Alpes</p>
-      <p>Ce site est sous licence 
-         <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a>.
-      </p>
-      <p>Contactez le directeur du projet : 
-         <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a>
-      </p>
+      <p>Licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></p>
+      <p>Contact : <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a></p>
     </footer>
   </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Sidebar Toggle Script -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      sidebar.style.left = sidebar.style.left === "-250px" ? "0" : "-250px";
+    }
+  </script>
+
+<div class="wave"></div>
 </body>
 </html>
 

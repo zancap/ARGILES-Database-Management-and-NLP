@@ -1,0 +1,121 @@
+/* Tableau central */
+
+.table_main {
+    display:block;
+    border:solid;
+    overflow:scroll;
+    resize:both;
+    max-height:500px;
+}
+
+.table_header {
+    display:flex;
+    justify-content:left;
+    width:100%;
+    birder:solid 2px;
+}
+
+.table_header_col {
+    margin:0px;
+    border:solid 1px;
+    min-width: 10px;
+    min-height:30px;
+    height: 100%;
+    width:10%;
+    white-space:normal;
+    overflow:hidden;
+    text-overflow: fade;
+    text-align:center;
+    resize:inline;
+}
+
+.table_header_cell_title {
+    display:flex;
+    justify-content:space-around;
+    text-align:center;
+    font-size:14px;
+    border:solid 1px black;
+    border-top:none;
+    border-bottom:solid 2px black;
+}
+
+/* Coloration par type de question */
+
+.question_evocation {
+    background-color:#C6DEF1;
+}
+
+.question_like {
+    background-color:#C9E4DE;
+}
+
+.question_dislike {
+    background-color:#FF8A8A;
+}
+
+.question_expectation {
+    background-color:#FAEDCB;
+}
+
+/* Largeur des colonnes par défaut */
+
+.cell_checkbox {
+    width:10%;
+}
+
+.cell_id {
+    width:50%;
+}
+
+.cell_level {
+    width:15%;
+}
+
+.cell_student {
+    width:15%;
+}
+
+.cell_classe {
+    width:15%;
+}
+
+.cell_version {
+    width:15%;
+}
+
+.cell_year {
+    width:15%;
+}
+
+.cell_corpus {
+    width:15%;
+}
+
+.cell_turn {
+    width:15%;
+}
+
+.cell_teacher {
+    width:15%;
+}
+
+.cell_norm {
+    width:15%;
+}
+
+.table_row {
+    display:flex;
+}
+
+.table_cell {
+    border:solid 1px;
+    min-height:30px;
+    min-width: 10px;
+    height: 57px;
+    width:100%;
+    padding:5px;
+    white-space:normal;
+    overflow:hidden;
+    text-overflow: fade;
+    text-align:left;	
+}

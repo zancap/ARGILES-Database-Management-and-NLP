@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+// Redirect to login if the user is not authenticated
+if (!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true) {
+    header("Location: login.php");
+    exit();
+}
+
 // Database connection configuration
 $servername = "localhost";
 $username = "zancanap";
@@ -99,10 +107,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['fileUpload'])) {
         header("Location: database_visualization.php");
         exit();
     } else {
-        echo "Invalid file or file not found. Please upload a valid XML file.";
+        echo "Fichier erroné ou non trouvé. Le fichier doit etre en format XML.";
     }
 } else {
-    echo "No file uploaded.";
+    echo "Le téléchargement a échoué.";
 }
 
 // Close the database connection

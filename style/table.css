@@ -59,48 +59,48 @@
 
 /* Largeur des colonnes par défaut */
 
-.cell_checkbox {
+.cell_id {
     width:10%;
 }
 
-.cell_id {
+.cell_idAudite {
+    width:10%;
+}
+
+.cell_idEtude {
+    width:10%;
+}
+
+.cell_idGroupe {
+    width:10%;
+}
+
+.cell_idIdee {
+    width:10%;
+}
+
+.cell_idQuestion {
+    width:10%;
+}
+
+.cell_ideeView {
+    width:70%;
+}
+
+.cell_nomGroupe {
+    width:20%;
+}
+
+.cell_sujet {
+    width:30%;
+}
+
+.cell_texteQuestion {
     width:50%;
 }
 
-.cell_level {
-    width:15%;
-}
-
-.cell_student {
-    width:15%;
-}
-
-.cell_classe {
-    width:15%;
-}
-
-.cell_version {
-    width:15%;
-}
-
-.cell_year {
-    width:15%;
-}
-
-.cell_corpus {
-    width:15%;
-}
-
-.cell_turn {
-    width:15%;
-}
-
-.cell_teacher {
-    width:15%;
-}
-
-.cell_norm {
-    width:15%;
+.cell_type {
+    width:20%;
 }
 
 .table_row {

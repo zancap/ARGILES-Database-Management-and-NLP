@@ -108,6 +108,8 @@ def read_xmls(xml_dir = "../xmls/"):
 
                         for reponse in groupe:
                             ongoing_audite = reponse.attrib['idAudite']
+                            if ongoing_audite not in groupes[ongoing_group]['audites']:
+                                groupes[ongoing_group]['audites'].append(ongoing_audite)
                             if ongoing_audite not in audites.keys():
                                 audites[ongoing_audite] = {
                                     "groupe" : ongoing_group,
@@ -136,59 +138,72 @@ def to_string(text):
     except Exception:
         return ""
     
-def stats(ids_audites):
+def stats(*args):
     """
         Extraction de statistiques pour un ensemble d'audités.
         Informations extraites :
             - Mots plus présents (10 plus présents)
             - Valence des réponses (positive / négative) [A VENIR]
 
-        input : [id_document, [liste d'identifiants audités] ]
+        input : [id_document,[id_document, id_group] ]
 
-        output : liste []
+        output : string
     """
     import spacy
     nlp = spacy.load('fr_core_news_md')         # Lemmatiseur par Spacy
 
     nltk.download('stopwords')                  # Liste de stopwords
     stoplist = stopwords.words('french')
+    stoplist_cat = {
+        'like':['aimer'],
+        'dislike':[],
+        'expectation':[],
+        'evocation':['évoquer']
+    }
 
     document,groupes,audites = read_xmls()
-    ongoing_doc = ids_audites[0]
+    ongoing_doc = []
+    ongoing_groups = []
+    for arg in args[0]:
+        if arg in document.keys():
+            ongoing_doc.append(arg)
+        elif arg in groupes.keys():
+            ongoing_groups.append(arg)
+            
     categories = []
-    #questions = {}
     dict = {}
     dict_lemmatized = {}
+    for id_group in groupes.keys():
+        if id_group in ongoing_groups or len(ongoing_groups) == 0:
+            for id_audite in groupes[id_group]['audites']:
+                for doc in audites[id_audite]['reponses'].keys():
+                    if doc in ongoing_doc or len(ongoing_doc) == 0:
+                        for categorie in audites[id_audite]['reponses'][doc].keys():
+                            if categorie not in dict.keys():
+                                dict[categorie] = {}
+                            if categorie not in dict_lemmatized.keys():
+                                dict_lemmatized[categorie] = {}
+                            if categorie not in categories:
+                                categories.append(categorie)
+                                
+                            for idee in audites[id_audite]['reponses'][doc][categorie]:
+                                traitement_nlp = nlp(idee)
+                                for tok in traitement_nlp:
+                                    token = str(tok)
+                                    lemma = tok.lemma_
 
-    for id in ids_audites[1]:
-        if str(id) in audites.keys() and ongoing_doc in audites[str(id)]['reponses'].keys():
-            for reponse in audites[str(id)]['reponses'][ongoing_doc]:
-                #if reponse not in questions.keys():
-                #    questions[reponse] = []
-                if reponse not in dict.keys():
-                    dict[reponse] = {}
-                if reponse not in categories:
-                    categories.append(reponse)
-                if reponse not in dict_lemmatized.keys():
-                    dict_lemmatized[reponse] = {}
-                for idee in audites[str(id)]['reponses'][ongoing_doc][reponse]:
-                #    questions[reponse].append(idee)
-                    doc = nlp(idee)
-                    for tok in doc:
-                        token = str(tok)
-                        lemma = tok.lemma_
+                                    token = token.strip(' ')
+                                    if token.lower() not in stoplist and token[:-1].lower() not in stoplist and lemma not in string.punctuation and lemma not in stoplist_cat[categorie]:
+                                        if token in dict[categorie].keys():
+                                            dict[categorie][token] +=1
+                                        else:
+                                            dict[categorie][token] = 1
 
-                        token = token.strip(' ')
-                        if token.lower() not in stoplist and token[:-1].lower() not in stoplist and lemma not in string.punctuation:
-                            if token in dict[reponse].keys():
-                                dict[reponse][token] +=1
-                            else:
-                                dict[reponse][token] = 1
-
-                            if lemma in dict_lemmatized[reponse].keys():
-                                dict_lemmatized[reponse][lemma] += 1
-                            else:
-                                dict_lemmatized[reponse][lemma] = 1
+                                        if lemma in dict_lemmatized[categorie].keys():
+                                            dict_lemmatized[categorie][lemma] += 1
+                                        else:
+                                            dict_lemmatized[categorie][lemma] = 1 
+        
     
     dic1, dic2 = {}, {}
 
@@ -231,7 +246,7 @@ def get_audite(id_audite:str,manga:str,xml_dir='./xmls/'):
 #document,groupes,audites = read_xmls()
 #print(audites)
 #print(get_audite('107'))
-print(stats(["roman Sirius",range(100,200)]))
+#print(stats(["roman Sirius",range(100,200)]))
 
                 
 

@@ -18,7 +18,5 @@ $password = "...";
 
 $dbname = "argiles";
 
-Use php.info to get info about the database in use.
-
 2M:maximum file size that can be uploaded to the database.
 

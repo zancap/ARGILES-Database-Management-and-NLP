@@ -5,16 +5,17 @@ ini_set('display_errors', 1);
 header('Content-Type: text/html; charset=utf-8');
 
 // Retrieve GET parameters
-$audite_id = isset($_GET['audite_id']) ? intval($_GET['audite_id']) : null;
 $novel_title = isset($_GET['novel_title']) ? escapeshellarg($_GET['novel_title']) : null;
+$min_id = isset($_GET['min_id']) ? intval($_GET['min_id']) : 100;
+$max_id = isset($_GET['max_id']) ? intval($_GET['max_id']) : 200;
 
 $error_message = "";
 $data = "";
 
 // If parameters exist, run the Python analysis script
-if ($audite_id && $novel_title) {
-    $scriptPath = escapeshellcmd("/data/www/html/argiles/utils/get_audite.py");
-    $command = "python3 $scriptPath $audite_id $novel_title 2>&1";
+if ($novel_title) {
+    $scriptPath = escapeshellcmd("/data/www/html/argiles/utils/stats.py");
+    $command = "python3 $scriptPath $novel_title $min_id $max_id 2>&1";
     $data = shell_exec($command);
 }
 
@@ -25,7 +26,7 @@ if ($audite_id && $novel_title) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analyse Personnage</title>
+    <title>Analyse Statistique</title>
     <link rel="stylesheet" href="styles/python_style.css">
 </head>
 <body>
@@ -39,12 +40,12 @@ if ($audite_id && $novel_title) {
     <a href="database_visualization.php">Contenu de la base de données</a>
     <a href="pdf_visualization.html">Visualisation des copies d'élèves originales</a>
     <a href="login.php">Téléversez des fichiers</a>
-    <a href="stats_results.php">Analyses statistiques</a>
+    <a href="get_audite_results.php">Analyses détaillées</a>
 </div>
 
 <!-- Header -->
 <header>
-    <h1>Analyses Détaillées</h1>
+    <h1>Analyses Statistiques</h1>
     <a href="index.html" class="btn-back">← Retour à l'accueil</a>
 </header>
 

@@ -1,5 +1,6 @@
 <?php
 include_once("connexion.php");
+
 $title = "Base de données";
 $db_list = file('./utils/db_list.txt',FILE_IGNORE_NEW_LINES);
 
@@ -25,7 +26,7 @@ function debug_to_console($data) {
     <script src="utils/scripts.js"></script> 
 </head>
 <body>
-    <!-- La barre laterale -->
+    <!-- Sidebar -->
     <div class="sidebar">
         <h4>Menu</h4>
         <a href="index.html">Accueil</a>
@@ -34,35 +35,33 @@ function debug_to_console($data) {
         <a href="upload.html">Téléversez des fichiers</a>
     </div>
 
-    <!-- L'en-tete -->
+    <!-- Header -->
     <header>
         <h1><?= htmlspecialchars($title) ?></h1>
     </header>
 
-    <!-- Le contenu principal -->
+    <!-- Main -->
     <div class="container">
         <h2 class="text-center">Sélectionnez un ouvrage à visualiser</h2>
 
-        <!-- Les Filtres -->
+        <!-- Filters -->
         <div id="filter_container">
-            <!-- Génération du filtre par PHP - fonction filter_load() -->
+            <!-- PHP generated filter - fonction filter_load() -->
         </div>
         <p style="visibility:visible" id="query"></p>
         <!-- ;height:0px;width:0px,padding:0px;margin:0px" ###-->
 
-        <!-- Le tableau des données -->
+        <!-- Data table -->
             <table class="table table-bordered" id="main_table">
                 <!-- Génération du tableau par PHP - fonction table_load() -->
             </table>
     </div>
 
-    <!-- Pied de page -->
+    <!-- Footer -->
     <footer>
         <p>© 2025 Projet ARGILES | Université Grenoble Alpes</p>
+		<p>Contactez le directeur du projet : <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a> </p>
         <p>Ce site est sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a>.</p>
-        <p>Contactez le directeur du projet : 
-            <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a>
-        </p>
     </footer>
 
     <!-- Les scripts -->

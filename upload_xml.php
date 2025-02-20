@@ -7,11 +7,7 @@ if (!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true) {
     exit();
 }
 
-// Database connection configuration
-$servername = "localhost";
-$username = "zancanap";
-$password = "@Tutideze15";
-$dbname = "argiles";
+include_once("connexion.php");
 
 // Connect to MySQL database
 $conn = new mysqli($servername, $username, $password, $dbname);

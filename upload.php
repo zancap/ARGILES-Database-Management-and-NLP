@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Ensure correct encoding
+// Force correct encoding
 header('Content-Type: text/html; charset=utf-8');
 
 // Redirect to login page if not authenticated
@@ -17,11 +17,10 @@ if (!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload - Projet ARGILES</title>
-
-    <!-- Bootstrap and Font Awesome -->
+    <!-- Bootstrap styling -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+	<!-- Page looks -->
     <style>
         /* Background */
         body {
@@ -47,10 +46,10 @@ if (!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true) {
             position: relative;
         }
 
-        /* Back Button */
+        /* Home Button */
         .btn-back {
             background-color: #fff;
-            color: #5a7d6e;
+            color: #2c3e50;
             border: 2px solid #5a7d6e;
             padding: 10px 15px;
             border-radius: 5px;
@@ -162,6 +161,7 @@ if (!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true) {
             border-radius: 8px;
             max-width: 900px;
             margin: 20px auto;
+			z-index: 5;
         }
         footer a {
             color: #88b097;
@@ -171,16 +171,16 @@ if (!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true) {
             text-decoration: underline;
         }
 
-        /* Wave Decoration */
+        /* Wave Deco */
         .wave {
             position: absolute;
-            bottom: 0;
+            bottom: -20px;
             left: 0;
             width: 100%;
-            height: 120px;
+            height: 100px;
             background: url('img/wave.svg') repeat-x;
             opacity: 0.3;
-            z-index: 1;
+            z-index: 10;
         }
     </style>
 </head>
@@ -199,7 +199,6 @@ if (!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true) {
             <label for="fileUpload" class="file-upload"><i class="fas fa-file-upload"></i> Sélectionnez un fichier XML</label>
             <input type="file" id="fileUpload" name="fileUpload" accept=".xml" required style="display: none;">
             
-            <!-- Display the selected file name -->
             <p id="selected-file" class="selected-file"></p>
 
             <button type="submit" class="btn-upload">Téléverser</button>
@@ -215,18 +214,17 @@ if (!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true) {
     </div>
 
     <!-- Footer -->
-    <footer>
-        <p>© 2025 Projet ARGILES | Université Grenoble Alpes</p>
-        <p>Ce site est sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a>.</p>
-        <p>Contactez le directeur du projet : 
-            <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a>
-        </p>
-    </footer>
+	<footer>
+		<p>© 2025 Projet ARGILES | Université Grenoble Alpes</p>
+		<p>Contactez le directeur du projet : <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a> </p>
+		<p>Ce site est sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a>.</p>
+		<br>
+	</footer>
 
     <!-- Wave Decoration -->
     <div class="wave"></div>
 
-    <!-- JavaScript to Display Selected File Name -->
+    <!-- Selected File Script -->
     <script>
         document.getElementById("fileUpload").addEventListener("change", function() {
             let fileName = this.files[0] ? this.files[0].name : "";

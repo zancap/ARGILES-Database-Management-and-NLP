@@ -1,19 +1,20 @@
 <?php
 session_start();
+include_once("connexion.php");
 
-// Define valid username and password
-$valid_username = "argiles";
-$valid_password = "#ProjetProIDL2425";
-
-// If form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // Verify credentials
-    if ($username === $valid_username && $password === $valid_password) {
-        $_SESSION["authenticated"] = true; // Store authentication state
-        header("Location: upload.php"); // Redirect to upload page
+    // Fetch user from the database
+    $sql = "SELECT password_hash FROM users WHERE username = :username";
+    $stmt = $db->prepare($sql);
+    $stmt->execute(['username' => $username]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user && password_verify($password, $user["password_hash"])) {
+        $_SESSION["authenticated"] = true;
+        header("Location: upload.php"); // Redirect after successful login
         exit();
     } else {
         $error_message = "Identifiants incorrects. Veuillez réessayer.";
@@ -27,9 +28,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion - Projet ARGILES</title>
+	<!-- Bootstrap styling -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Eye icon -->
-    <style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+     <!-- Page looks -->
+	<style>
         /* Background */
         body {
             font-family: 'Roboto', sans-serif;
@@ -137,6 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border-radius: 8px;
             max-width: 900px;
             margin: 20px auto;
+			z-index: 5;
         }
         footer a {
             color: #88b097;
@@ -146,7 +150,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             text-decoration: underline;
         }
 
-        /* Wave Decoration */
+        /* Wave Deco */
         .wave {
             position: absolute;
             bottom: 0;
@@ -155,7 +159,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             height: 120px;
             background: url('img/wave.svg') repeat-x;
             opacity: 0.3;
-            z-index: 1;
+            z-index: 10;
         }
     </style>
 </head>
@@ -195,10 +199,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- Footer -->
 <footer>
     <p>© 2025 Projet ARGILES | Université Grenoble Alpes</p>
-    <p>Ce site est sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a>.</p>
-    <p>Contactez le directeur du projet : 
-        <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a>
-    </p>
+    <p>Contactez le directeur du projet : <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a> </p>
+	<p>Ce site est sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a>.</p>
+	<br>
 </footer>
 
 <!-- Wave Decoration -->

@@ -1,27 +1,20 @@
-var table_load = function() {
-                
-    var requete = "req="+$('#query').text();
-
-    $.ajax({
-        type: 'POST',
-        url: 'utils/tableau_accueil.php',
-        data: requete,
-        dataType: 'html',
-        success: function(reponse, statut) {
-            document.getElementById('main_table').innerHTML = reponse;
-        },
-        error: function(reponse, statut) {
-            console.log(reponse);
-        }
+function onStart() {
+    // Loads the page at the beginning, using callbacks
+    filter_load(() => {
+        auto_query(() => {
+            table_load(() => {
+                $(".table_main")[0].scrollTop = 0;
+            });
+        });
     });
-    
-};
+}
 
-var filter_load = function(_callback = function() {autoquery()}) {
+function filter_load(callback) {
+    // AJAX Call to filter.php to generate the filter
+    // Allows for dynamic update of the filter
 
-    if ($('#query').text == "") {
+    if ($('#query').text() != "") {
         var requete = "req="+$('#query').text();
-        console.log('VIDE');
     } else {
         var requete = "req=SELECT * FROM Sirius";
     }
@@ -32,132 +25,186 @@ var filter_load = function(_callback = function() {autoquery()}) {
             data: requete,
             dataType: 'html',
             success: function(reponse, statut) {
-                document.getElementById('filter_container').innerHTML = reponse;
+                $('#filter_container').html(reponse);
+        
+                if (typeof callback === 'function') {
+                    callback();
+                }
             },
             error: function(reponse, statut) {
                 console.log(reponse);
             }
         });
-
-    $("select").on({
-        "change":function(){
-            auto_query();
-            filter_load;
-            console.log('Select changed !');
-            table_load();
-        }
-    })
-
-    _callback();
 }
 
-function auto_query() {
-    $query = "";
-    $ouvrages = $('#ouvrage')[0].value;
-    $type = $('#type')[0].value;
-    $nomGroupe = $('#nomGroupe')[0].value;
-    $input = $('input');
-    $inputs = []
-    for($var in $input) {
-        if ($input[$var].nodeType == 1) {
-            //console.log($input[$var]);
-            $inputs.push([$input[$var].id,$input[$var].checked]);
-        }
-    }
-    //console.log($inputs);
-    console.log('ouvrage : '+$ouvrages+' | type : '+$type+' | nomGroupe = '+$nomGroupe);
-    if ($ouvrages == 'all') {    // Récupère tous les documents depuis utils/db_list.txt
-        $ouvrages = []
-        $.get('utils/db_list.txt', function(data) {
-            $inter = data.split("\n");
-            for ($val in $inter) {
-                $val2 = $inter[$val].split("|")[0];
-                $ouvrages.push($val2);
-                buildQuery($ouvrages);
-            }
-        }, 'text');
-    } else {
-        $ouvrages = [$ouvrages];
-        buildQuery($ouvrages);
-    }
-
-function buildQuery($ouvrages,_callback = function() {table_load();}) {
+function auto_query(callback) {
+    // Regenerates the query based on selected options on the filter
+    // Allows for dynamic update of the table
     $query = '';
+    $where_check = false;   // Tells if the "WHERE" SQL condition has been written down
 
-    for($index = 0; $index < $ouvrages.length ; $index++) {     // Récupération des ouvrages
-        // 1. Create the query based on selection
-        $query += 'SELECT ';
-        if ($('#all_checkboxes')[0].checked) {
-            $query += '*';
-        } else {
-            $inputs = $('input');
-            $nb_checkboxes = 0;
-            $columns = '';
-            for ($i in $inputs) {     // Récupère tous les Nodes DOM des cases
-                if ($inputs[$i].nodeType == 1 && $inputs[$i].id != 'all_checkboxes') {
-                    if ($inputs[$i].checked == true) {
-                        $columns += $inputs[$i].id;
-                        $nb_checkboxes += 1;
-                        if ($i < $inputs.length - 1) {
-                            $columns += ', ';
-                        }
+    // Get all checked boxes in the filter, or all if it is checked
+    $q_ouvrages = $('.ouvrage:checked').toArray();
+    $q_types = $('.type:checked').toArray();
+    $q_groupes = $('.nomGroupe:checked').toArray();
+    $q_column = $('.column:checked').toArray();
+
+    if ($q_ouvrages.length == 0 | $q_types.length == 0 | $q_groupes.length == 0 | $q_column.length == 0) {
+        $("#query")[0].innerHTML = "NONE";
+    } else {
+        for(oeuvre in $q_ouvrages) {
+            // 1. Create the query based on selection
+            $query += 'SELECT ';
+            if ($('#all_column')[0].checked) {
+                $query += '* ';
+            } else {
+                for(col in $q_column) {
+                    $query += $q_column[col].id;
+                    if (col < $q_column.length - 1) {
+                        $query += ', ';
                     }
                 }
             }
-            if ($nb_checkboxes == 0) {
-                $query += 'null';
-            } else {
-                $query += $columns;
+            $query += ' FROM '+$q_ouvrages[oeuvre].id+' ';
+            if (!$('#all_type')[0].checked) {
+                $query += 'WHERE ( ';
+                $where_check = true;
+                for(type in $q_types) {
+                    $query += "type='"+$q_types[type].id+"' ";
+                    if (type < $q_types.length - 1) {
+                        $query += 'OR ';
+                    }
+                }
+                $query += ') ';
+            }
+            if (!$('#all_nomGroupe')[0].checked) {
+                if ($where_check) {
+                    $query += 'AND ( ';
+                } else {
+                    $query += 'WHERE ( ';
+                }
+                for(group in $q_groupes) {
+                    $query += "nomGroupe='"+$q_groupes[group].id+"' ";
+                    if (group < $q_groupes.length - 1) {
+                        $query += 'OR ';
+                    }
+                }
+                $query += ') ';
+            }
+            if (oeuvre < $q_ouvrages.length - 1) {
+                $query += " UNION ";
             }
         }
-        $query += ' FROM '+$ouvrages[$index];
-        console.log($query);
-        if ($type != 'all') {       // Specify type of question
-            $query += ' WHERE type = "'+$type+'"';
-        }
-        if ($nomGroupe != 'all') {  // Specify group
-            $query += ' AND nomGroupe = "'+$nomGroupe+'"';
-        }
-        if ($index < $ouvrages.length - 1) {
-            $query += " UNION ";
-        }
-    }
 
-    $("#query")[0].innerHTML = $query;
-
-    _callback();    // Callback function : autoload() after modifying the query
+        $("#query")[0].innerHTML = $query;
+    
+        if (typeof callback === 'function') {
+            callback();
+        }
     }
 }
 
-function domReady(f) {  //  Starts the f function after loading
-    if (document.readyState === 'complete') {
-    f(array_slice(arguments,1));
-    } else {
-    document.addEventListener('DOMContentLoaded', f);
+function table_load(callback) {
+    // AJAX call of utils/tableau_accueil.php to generate the table
+    // Allows for dynamic update of the table
+                
+    var requete = "req="+$("#query")[0].innerHTML;
+
+    $.ajax({
+        type: 'POST',
+        url: 'utils/tableau_accueil.php',
+        data: requete,
+        dataType: 'html',
+        success: function(reponse, statut) {
+            document.getElementById('main_table').innerHTML = reponse;
+            if (typeof callback === 'function') {
+                callback();
+            }
+        },
+        error: function(reponse, statut) {
+            console.log(reponse);
+        }
+    });
+    
+};
+
+function setClipboard(text) {
+    // First try giving the user a copy-paste button for the query
+    let data = new DataTransfer();
+  
+    data.items.add(text, "text/plain");
+    navigator.clipboard.write(data);//.then(function () { alert("Requête copiée");      },      function () {        alert("Erreur, veuillez enregistrer manuellement la requête suivante :\n"+$query);      },    );
+  }
+
+function setClipboard_old(text) {
+    // Second try giving the user a copy-paste button for the query
+    // Deprecated function
+    var copyText = text;
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    alert("Requête copiée");
+}
+
+function copy_paste() {
+    // Paperwrap for the copy functions, tries to give the user the request
+
+    $query = "http://i3l.univ-grenoble-alpes.fr/argiles/database_visualization.php?query="+$("#query")[0].innerHTML;
+    try {
+        setClipboard_old($query);
+        setClipboard($query);
+    } catch {
+        alert("Erreur, veuillez enregistrer manuellement la requête suivante :\n\n\n"+$query);
     }
+}
+
+function toggle_filter_visibility(elt) {
+    // Toggles the filter visibility on click on any type of filter available
+    $div_id = elt.id+"_visible";
+    $div = $('#'+$div_id)[0];
+    if ($div.style['display'] == "none") {
+        $div.style['display'] = "block";
+    } else {
+        $div.style['display'] = "none";
     }
 
-function update() {
-    $inputs = $('input');
-    for ($i in $inputs) {                         // Récupère tous les Nodes DOM des cases
-        if ($inputs[$i].nodeType == 1 && $inputs[$i].id != 'all_checkboxes' && $inputs[$i].checked == false) {
-            $('#all_checkboxes')[0].checked = false;
+}
+
+function update(elt) {
+    // Updates when a checkbox is clicked
+    $master = $('#all_'+elt.className)[0];
+    $master.checked = false;    // If the checkbox turns false, turns its "all" checkbox false too
+    auto_query();
+    table_load();
+}
+
+function master_checkbox_update(elt) {
+    // Updates when a "all" checkbox is clicked
+    $bool = elt.checked;
+    $checkboxes = $('.'+elt.id.split('_')[1]);
+    for ($i in $checkboxes) {       // Switch all corresponding boxes to same value
+        if ($checkboxes[$i].nodeType == 1) {
+            $checkboxes[$i].checked = $bool;
         }
     }
     auto_query();
-    var requete = $('#query')[0].innerHTML;
+    table_load();
 }
 
-function checkbox_update() {
-    $checkbox = $('#all_checkboxes')[0].checked;    // Récupère le statut de la case
-    $inputs = $('input');
-    $input_checkboxes = [];
-    for ($i in $inputs) {                         // Récupère tous les Nodes DOM des cases
-        if ($inputs[$i].nodeType == 1 && $inputs[$i].id != 'all_checkboxes') {
-            $input_checkboxes.push($inputs[$i]);
-        }
-    }
-    for($input in $input_checkboxes) {              // Modifie chaque case de la même manière que la 1ère
-        $input_checkboxes[$input].checked = $checkbox;
+function reload() {
+    // Reload button : Reloads the query and table based on selection. Debugging purpose.
+    auto_query(() => {
+        table_load(() => {
+            $(".table_main")[0].scrollTop = 0;
+        });
+    });
+}
+
+function domReady(f) {
+    //  Starts the f function after loading
+    if (document.readyState === 'complete') {
+        f(array_slice(arguments,1));
+    } else {
+        document.addEventListener('DOMContentLoaded', f);
     }
 }

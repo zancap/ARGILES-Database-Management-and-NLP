@@ -22,4 +22,6 @@ $dbname = "argiles";
 
 Directory "gestion bdd" = scripts necessary to the project managment only (info about the databse and management of users).
 
+Directory "utils" = python scripts for NLP + jquery + scripts + dynamic tabels and filters
+
 2M:maximum file size that can be uploaded to the database.

@@ -25,10 +25,15 @@ function debug_to_console($data) {
     <script src="utils/scripts.js"></script> 
 </head>
 <body>
+
+	<!-- Menu Toggle Button -->
+	<div id="menuToggle" onclick="toggleSidebar()">☰ Menu</div>
+  
     <!-- La barre laterale -->
     <div class="sidebar">
         <h4>Menu</h4>
         <a href="index.html">Accueil</a>
+		<a href="functions.html">Explorez les fonctionnalités</a>
         <a href="database_visualization.php">Contenu de la base de données</a>
         <a href="pdf_visualization.php">Visualisation des copies d'élèves originales</a>
         <a href="upload.html">Téléversez des fichiers</a>
@@ -59,10 +64,9 @@ function debug_to_console($data) {
     <!-- Pied de page -->
     <footer>
         <p>© 2025 Projet ARGILES | Université Grenoble Alpes</p>
-        <p>Ce site est sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a>.</p>
-        <p>Contactez le directeur du projet : 
-            <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a>
-        </p>
+        <p>Contactez le directeur du projet : <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a></p>
+		<p>Ce site est sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a></p>
+		<br>
     </footer>
 
     <!-- Les scripts -->
@@ -88,6 +92,19 @@ function debug_to_console($data) {
         }
         echo 'domReady(onStart);';  //  Construit le filtre
         ?>
+		
+	<!-- Toggle Menu Script -->
+    function toggleSidebar() {
+      var sidebar = document.getElementById("sidebar");
+
+      // Ensure a default left position
+      if (!sidebar.style.left) {
+        sidebar.style.left = "-250px";
+      }
+
+      // Toggle sidebar visibility
+      sidebar.style.left = (sidebar.style.left === "-250px") ? "0" : "-250px";
+    }
     </script>
 
 </body>

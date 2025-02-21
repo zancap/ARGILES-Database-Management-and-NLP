@@ -46,18 +46,6 @@ if ($arguments) {
 </head>
 <body>
 
-<!-- Sidebar -->
-<div id="menuToggle" onclick="toggleSidebar()">☰ Menu</div>
-<div class="sidebar" id="sidebar">
-	<br><br>
-	<a href="index.html">Accueil</a>
-    <a href="functions.html">Explorez les fonctionnalités</a>
-    <a href="database_visualization.php">Contenu de la base de données</a>
-    <a href="pdf_visualization.html">Visualisation des copies d'élèves originales</a>
-    <a href="login.php">Téléversez des fichiers</a>
-    <a href="get_audite_results.php">Analyses détaillées</a>
-</div>
-
 <!-- Header -->
 <header>
     <h1>Analyses Statistiques</h1>
@@ -93,16 +81,12 @@ if ($arguments) {
 <!-- Footer -->
 <footer>
     <p>© 2025 Projet ARGILES | Université Grenoble Alpes</p>
-	<p>Contactez le directeur du projet : <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a> </p>
-    <p>Ce site est sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a>.</p>
+	<p>Contactez le directeur du projet : <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a></p>
+    <p>Ce site est sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a></p>
 	<br>
 </footer>
 
 <script>
-function toggleSidebar() {
-    var sidebar = document.getElementById("sidebar");
-    sidebar.style.left = (sidebar.style.left === "-250px") ? "0" : "-250px";
-}
     <?php
         if (!empty($data)):
             echo "$('#results').innerHTML = '";

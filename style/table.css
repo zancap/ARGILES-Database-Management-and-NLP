@@ -4,7 +4,6 @@
     display:block;
     border:solid;
     overflow:scroll;
-    resize:both;
     max-height:500px;
 }
 
@@ -12,7 +11,7 @@
     display:flex;
     justify-content:left;
     width:100%;
-    birder:solid 2px;
+    border:solid 2px;
 }
 
 .table_header_col {
@@ -39,68 +38,166 @@
     border-bottom:solid 2px black;
 }
 
+/* Filtre */
+
+.reload_button_div {
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.filter_row {
+    display:flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    height:auto;
+    min-height: 40px;
+}
+
+.filter_zone {
+    margin:3px;
+    min-height: 40px;
+    height:100%;
+    border:solid 2px;
+    border-color:rgba(90,125,110,0.6);
+    border-radius:30px;
+    text-align:center;
+    vertical-align: center;
+}
+
+.filter_button {
+    width:95%;
+    margin:2px;
+    border: 2px solid grey;
+    border-radius:50px;
+    background-color:rgba(0,0,0,0);
+    font-size:1.3em;
+}
+
+.filter_div {
+    text-align: left;
+    padding-left:10%;
+    
+}
+
+.reload_button, .copy_button {
+    margin:auto;
+    width:50px;
+    height:50px;
+}
+
+.img_button {
+    width:40px;
+    height:40px;
+}
+
+.master_label {
+    font-weight:bold;
+}
+
 /* Coloration par type de question */
 
 .question_evocation {
     background-color:#C6DEF1;
 }
 
+#type_evocation {
+    background-color:#C6DEF1;
+    color:#3d99e4;
+}
+
 .question_like {
     background-color:#C9E4DE;
+}
+
+#type_like {
+    background-color:#C9E4DE;
+    color:#3fd370;    
 }
 
 .question_dislike {
     background-color:#FF8A8A;
 }
 
+#type_dislike {
+    background-color:#FF8A8A;
+    color:#f71212;    
+}
+
 .question_expectation {
     background-color:#FAEDCB;
+}
+
+#type_expectation {
+    background-color:#FAEDCB;    
+    color:#f8bf2e;    
 }
 
 /* Largeur des colonnes par défaut */
 
 .cell_id {
     width:10%;
+    min-width:5%;
+    max-width:50%;
 }
 
 .cell_idAudite {
     width:10%;
+    min-width:5%;
+    max-width:50%;
 }
 
 .cell_idEtude {
     width:10%;
+    min-width:5%;
+    max-width:50%;
 }
 
 .cell_idGroupe {
     width:10%;
+    min-width:5%;
+    max-width:50%;
 }
 
 .cell_idIdee {
     width:10%;
+    min-width:5%;
+    max-width:50%;
 }
 
 .cell_idQuestion {
     width:10%;
+    min-width:5%;
+    max-width:50%;
 }
 
 .cell_ideeView {
     width:70%;
+    min-width:5%;
+    max-width:100%;
 }
 
 .cell_nomGroupe {
     width:20%;
+    min-width:5%;
+    max-width:100%;
 }
 
 .cell_sujet {
     width:30%;
+    min-width:5%;
+    max-width:100%;
 }
 
 .cell_texteQuestion {
     width:50%;
+    min-width:5%;
+    max-width:100%;
 }
 
 .cell_type {
     width:20%;
+    min-width:5%;
+    max-width:100%;
 }
 
 .table_row {

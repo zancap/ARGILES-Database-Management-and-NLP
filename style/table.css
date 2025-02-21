@@ -38,6 +38,11 @@
     border-bottom:solid 2px black;
 }
 
+#no_data {
+    text-align:center;
+    padding:5px;
+}
+
 /* Filtre */
 
 .reload_button_div {
@@ -94,42 +99,56 @@
     font-weight:bold;
 }
 
+#nb_lines {
+    font-weight:bold;
+}
+
 /* Coloration par type de question */
+:root {
+    --color_evocation : #C6DEF1;
+    --color_evocation_text : #3d99e4;
+    --color_like : #C9E4DE;
+    --color_like_text : #3fd370;
+    --color_dislike : #FF8A8A;
+    --color_dislike_text : #f71212;
+    --color_expectation : #FAEDCB;
+    --color_expectation_text : #f8bf2e;
+}
 
 .question_evocation {
-    background-color:#C6DEF1;
+    background-color:var(--color_evocation);
 }
 
 #type_evocation {
-    background-color:#C6DEF1;
-    color:#3d99e4;
+    background-color:var(--color_evocation);
+    color:var(--color_evocation_text);
 }
 
 .question_like {
-    background-color:#C9E4DE;
+    background-color:var(--color_like);
 }
 
 #type_like {
-    background-color:#C9E4DE;
-    color:#3fd370;    
+    background-color:var(--color_like);
+    color:var(--color_like_text); 
 }
 
 .question_dislike {
-    background-color:#FF8A8A;
+    background-color:var(--color_dislike);
 }
 
 #type_dislike {
-    background-color:#FF8A8A;
-    color:#f71212;    
+    background-color:var(--color_dislike);
+    color:var(--color_dislike_text);    
 }
 
 .question_expectation {
-    background-color:#FAEDCB;
+    background-color:var(--color_expectation);
 }
 
 #type_expectation {
-    background-color:#FAEDCB;    
-    color:#f8bf2e;    
+    background-color:var(--color_expectation);    
+    color:var(--color_expectation_text);    
 }
 
 /* Largeur des colonnes par défaut */
@@ -200,6 +219,12 @@
     max-width:100%;
 }
 
+.cell_idShow {
+    width:25%;
+    min-width:5%;
+    max-width:100%;
+}
+
 .table_row {
     display:flex;
 }
@@ -214,5 +239,14 @@
     white-space:normal;
     overflow:hidden;
     text-overflow: fade;
-    text-align:left;	
+    text-align:left;
+}
+
+a > .table_cell {
+    text-align:center;
+    vertical-align: middle;
+    font-weight:bold;
+    font-size:18px;
+    text-decoration:underline;
+    color:black;
 }

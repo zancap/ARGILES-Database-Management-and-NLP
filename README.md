@@ -22,3 +22,5 @@ Directory "gestion bdd" = scripts necessary to the project managment only (info 
 
 2M:maximum file size that can be uploaded to the database.
 
+FileZilla location
+/data/www/html/argiles

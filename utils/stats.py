@@ -19,12 +19,5 @@ args = sys.argv
 args = [x.strip() for x in args]    # Nettoyage des arguments
 
 # Extraction de données de l'xml
-if '/' in args[-1]:
-    xml_dir = args[-1]
-    document,groupes,audites = read_xmls(xml_dir)
-    stats(args[1:-1])
-else:
-    xml_dir = '../xmls/'
-    document,groupes,audites = read_xmls(xml_dir)
-    stats(args[1:])
+stats(args[1:])
 

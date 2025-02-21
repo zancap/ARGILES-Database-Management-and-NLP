@@ -10,7 +10,7 @@ Goals: Provide free access to the collected and annotated data for future resear
 
 Database connection configuration: please use your own access info.
 
-$servername = "localhost";
+$servername = "i3l.univ-grenoble-alpes.fr";
 
 $username = "...";
 

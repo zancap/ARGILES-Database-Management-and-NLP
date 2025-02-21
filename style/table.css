@@ -32,7 +32,7 @@
     display:flex;
     justify-content:space-around;
     text-align:center;
-    font-size:14px;
+    font-size:18px;
     border:solid 1px black;
     border-top:none;
     border-bottom:solid 2px black;
@@ -81,7 +81,18 @@
 .filter_div {
     text-align: left;
     padding-left:10%;
-    
+}
+
+.filter_button_div {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.filter_button_under_div {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .reload_button, .copy_button {
@@ -227,6 +238,20 @@
 
 .table_row {
     display:flex;
+}
+
+.flex_row {
+    display:flex;
+    justify-content:left;
+    flex-direction: row;
+}
+
+.width-25 {
+    width:25%;
+}
+
+.width-50 {
+    width:50%;
 }
 
 .table_cell {

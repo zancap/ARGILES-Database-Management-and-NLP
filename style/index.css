@@ -4,18 +4,20 @@ body {
     color: #333;
     margin: 0;
 }
+
 /* Side Menu */
 .sidebar {
     width: 250px;
     position: fixed;
     top: 0;
-    left: 0;
+    left: -250;
     height: 100%;
     background-color: #2c3e50;
     color: #fff;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+	transition: left 0.3s ease-in-out;
 }
 .sidebar a {
     color: #fff;
@@ -27,18 +29,38 @@ body {
 .sidebar a:hover {
     text-decoration: underline;
 }
+
+/* Sidebar Toggle Button */
+#menuToggle {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background-color: #5a7d6e; /* Green button */
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1100;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#menuToggle:hover {
+    background-color: #4a665a; /* Darker green on hover */
+}
+
 /* Header */
 header {
     background-color: #2c3e50;
     color: #fff;
-    padding: 20px;
+    padding: 40px;
     text-align: center;
 }
 .container {
     margin-left: 270px;
-    padding: 20px;
+    padding: 20px 0;
     max-width:80%;
-}/*  */
+}
+
 /* Footer */
 footer {
     background-color: #2c3e50;

@@ -191,6 +191,38 @@ function master_checkbox_update(elt) {
     table_load();
 }
 
+function open_stats(dir) {
+    $arguments = [];
+    $ouvrages = $('.ouvrage:checked').toArray();
+    for ($i = 0; $i < $ouvrages.length; $i++) {
+        $arguments.push($ouvrages[$i].id);
+    }
+    $groupes = $('.nomGroupe:checked').toArray();
+    for ($i = 0; $i < $groupes.length; $i++) {
+        $arguments.push($groupes[$i].id);
+    }
+    $url = "/stats_results.php?arguments="+$arguments.join('AND');
+    console.log(dir);
+    console.log($url);
+    window.open(dir+$url);
+}
+
+function open_stats_lemma(dir) {
+    if(false) { // Fonction désactivée en attendant l'ajout du package spacy fr_core_news_md -> Ligne à retirer si le package est ajouté
+        $arguments = [];
+        $ouvrages = $('.ouvrage:checked').toArray();
+        for ($i = 0; $i < $ouvrages.length; $i++) {
+            $arguments.push($ouvrages[$i].id);
+        }
+        $groupes = $('.nomGroupe:checked').toArray();
+        for ($i = 0; $i < $groupes.length; $i++) {
+            $arguments.push($groupes[$i].id);
+        }
+        $url = "/stats_results.php?arguments=LEMMAAND"+$arguments.join('AND');
+        window.open(dir+$url);
+    }
+}
+
 function reload() {
     // Reload button : Reloads the query and table based on selection. Debugging purpose.
     auto_query(() => {

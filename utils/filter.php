@@ -2,6 +2,9 @@
 include_once("../connexion.php");
 $query = $_POST['req'];
 $db_list = file('./db_list.txt',FILE_IGNORE_NEW_LINES);
+$url = $_SERVER['REQUEST_URI'];
+$url = explode('/',$url);
+$url = implode('/',array_splice($url,0,-2));
 
 // Database column names query
 $result = $db->query($query);
@@ -81,12 +84,25 @@ $vars = array_keys($vars[0]);	// Récupération des noms des catégories
             </div>
         </div>
         <div class='filter_button_div'>
-            <button id='reload_button'  class='reload_button' type='button' onclick='javascript:reload()'>
-                <img src='img/reload.png' class='img_button' />
-            </button>
-            <button id='copy_button' class='copy_button' type='button' onclick="javascript:copy_paste()">
-                <img src='img/copy.png' class='img_button' />
-            </button>
+            <div class='filter_button_under_div'>
+                <button id='reload_button'  class='reload_button' type='button' onclick='javascript:reload()'>
+                    <img src='img/reload.png' class='img_button' />
+                </button>
+                <button id='copy_button' class='copy_button' type='button' onclick="javascript:copy_paste()">
+                    <img src='img/copy.png' class='img_button' />
+                </button>
+            </div>
+            <div class='filter_button_under_div'>
+                <?php $stats_arguments = '?arguments=';
+
+                ?>
+                <button id='stats_button' class='stats_button' type='button' onclick="javascript:open_stats('<?php echo $url; ?>')">
+                    <img src='img/stats.png' class='img_button' />
+                </button>
+                <button id='stats_button' class='stats_button' type='button' onclick="javascript:open_stats_lemma('<?php echo $url; ?>')">
+                    <img src='img/stats_lemma.png' class='img_button' />
+                </button>
+            </div>
         </div>
     </div>
     <div class='filter_row'>

@@ -275,3 +275,26 @@ a > .table_cell {
     text-decoration:underline;
     color:black;
 }
+
+/* Bouton annexe */
+
+.arrow_up {
+    width:40px;
+    height:30px;
+    border-radius: 100px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #5a7d6d;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.up_button {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.up_img:hover {
+    background-color: #3f584c;
+}

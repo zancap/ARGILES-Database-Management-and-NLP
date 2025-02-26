@@ -13,14 +13,13 @@ putenv("PYTHONIOENCODING=utf-8");
 putenv("LANG=fr.UTF-8");
 
 // Retrieve GET parameters
-$arguments = isset($_GET['arguments']) ? escapeshellarg($_GET['arguments']) : null;
-$arguments = explode('&',$arguments);
+$arguments = isset($_GET['arguments']) ? explode('AND',trim(escapeshellarg($_GET['arguments']),"'")) : '';
 
 $error_message = "";
 $data = "";
 
 // If parameters exist, run the Python analysis script
-if ($arguments) {
+if ($arguments != '') {
     $scriptPath = "./utils/stats.py";
     $scriptPath = escapeshellcmd($scriptPath);
     $command = ["python3",$scriptPath];
@@ -30,7 +29,7 @@ if ($arguments) {
     array_push($command,'./xmls/'); // Lien vers les fichiers xml
     array_push($command,"2>&1");
     $command = implode(' ',$command);
-    $data = shell_exec($command);
+    $data = htmlspecialchars(shell_exec($command));
 }
 
 ?>
@@ -45,6 +44,18 @@ if ($arguments) {
     <link rel="stylesheet" href="style/table.css">
 </head>
 <body>
+
+<!-- Sidebar -->
+<div id="menuToggle" onclick="toggleSidebar()">☰ Menu</div>
+<div class="sidebar" id="sidebar">
+	<br><br>
+	<a href="index.html">Accueil</a>
+    <a href="functions.html">Explorez les fonctionnalités</a>
+    <a href="database_visualization.php">Contenu de la base de données</a>
+    <a href="pdf_visualization.html">Visualisation des copies d'élèves originales</a>
+    <a href="login.php">Téléversez des fichiers</a>
+    <a href="get_audite_results.php">Analyses détaillées</a>
+</div>
 
 <!-- Header -->
 <header>
@@ -78,15 +89,23 @@ if ($arguments) {
     </div>
 </div>
 
+<button class='up_button' onclick='javascript:function() {$(".table_main").scrollTop = 0;}'>
+    <img src='img/arrow_up' class='arrow_up up_img' />
+</button>
+
 <!-- Footer -->
 <footer>
     <p>© 2025 Projet ARGILES | Université Grenoble Alpes</p>
-	<p>Contactez le directeur du projet : <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a></p>
-    <p>Ce site est sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a></p>
+	<p>Contactez le directeur du projet : <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a> </p>
+    <p>Ce site est sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a>.</p>
 	<br>
 </footer>
 
 <script>
+function toggleSidebar() {
+    var sidebar = document.getElementById("sidebar");
+    sidebar.style.left = (sidebar.style.left === "-250px") ? "0" : "-250px";
+}
     <?php
         if (!empty($data)):
             echo "$('#results').innerHTML = '";

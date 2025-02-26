@@ -159,7 +159,7 @@ def stats(*args):
     else:
         xml_directory = '../xmls/'
         
-    stoplist = stopwords.words('french')
+    stoplist = stopwords.words('french')+["c'","l'","d'","j'","qu'"]
     stoplist_cat = {                            # Stopwords spécifique à la catégorie
         'like':['aimer','aimé'],
         'dislike':[],

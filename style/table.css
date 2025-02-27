@@ -80,13 +80,20 @@
 
 .filter_div {
     text-align: left;
-    padding-left:10%;
+    padding-left: 0px;
+}
+
+.filter_option {
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:1px;
+    padding-bottom:1px;
 }
 
 .filter_button_div {
     display:flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: start;
 }
 
 .filter_button_under_div {

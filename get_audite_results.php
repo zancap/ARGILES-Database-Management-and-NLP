@@ -23,9 +23,6 @@ if ($audite_id && $novel_title) {
     $command = "python3 $scriptPath '$audite_id' '$novel_title' 2>&1";
     $data = shell_exec($command);
 }
-print_r($command.'\n');
-print_r(htmlspecialchars($command));
-
 ?>
 
 <!DOCTYPE html>

@@ -62,8 +62,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['fileUpload'])) {
         $idEtude = (int) $xml['idEtude'];
         $sujet = (string) $xml['sujet'];
 
-        // Determine the target table based on the subject
-        $targetTable = $sujet === "roman Sirius" ? "Sirius" : "RomeoJuliette";
+		// Determine the target table based on the subject
+		if ($sujet === "roman Sirius") {
+			$targetTable = "Sirius";
+		} elseif ($sujet === "manga Roméo et Juliette") {
+			$targetTable = "RomeoJuliette";
+		} else {
+			// Optional: Handle unexpected subjects
+			$targetTable = "Unknown"; 
+		}
 
         foreach ($xml->question as $question) {
             $idQuestion = (int) $question['idQuestion'];

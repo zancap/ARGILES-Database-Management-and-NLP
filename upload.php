@@ -170,18 +170,6 @@ if (!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true) {
         footer a:hover {
             text-decoration: underline;
         }
-
-        /* Wave Deco */
-        .wave {
-            position: absolute;
-            bottom: -20px;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: url('img/wave.svg') repeat-x;
-            opacity: 0.3;
-            z-index: 10;
-        }
     </style>
 </head>
 <body>
@@ -218,11 +206,7 @@ if (!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true) {
 		<p>© 2025 Projet ARGILES | Université Grenoble Alpes</p>
 		<p>Contactez le directeur du projet : <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a> </p>
 		<p>Ce site est sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a>.</p>
-		<br>
 	</footer>
-
-    <!-- Wave Decoration -->
-    <div class="wave"></div>
 
     <!-- Selected File Script -->
     <script>

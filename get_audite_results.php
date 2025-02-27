@@ -29,7 +29,7 @@ if ($audite_id && $novel_title) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analyse Personnage</title>
+    <title>Analyses Détaillées</title>
     <link rel="stylesheet" href="style/python_style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style/index.css" />
@@ -37,22 +37,10 @@ if ($audite_id && $novel_title) {
 </head>
 <body>
 
-<!-- Sidebar -->
-<div id="menuToggle" onclick="toggleSidebar()">☰ Menu</div>
-<div class="sidebar" id="sidebar">
-	<br><br>
-	<a href="index.html">Accueil</a>
-    <a href="functions.html">Explorez les fonctionnalités</a>
-    <a href="database_visualization.php">Contenu de la base de données</a>
-    <a href="pdf_visualization.html">Visualisation des copies d'élèves originales</a>
-    <a href="login.php">Téléversez des fichiers</a>
-    <a href="stats_results.php">Analyses statistiques</a>
-</div>
-
 <!-- Header -->
 <header>
     <h1>Analyses Détaillées</h1>
-    <a href="index.html" class="btn-back">← Retour à l'accueil</a>
+    <a href="database_visualization.php" class="btn-back">← Retour à la BDD</a>
 </header>
 
 <!-- Results -->
@@ -80,16 +68,8 @@ if ($audite_id && $novel_title) {
 <footer>
     <p>© 2025 Projet ARGILES | Université Grenoble Alpes</p>
 	<p>Contactez le directeur du projet : <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a> </p>
-    <p>Ce site est sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a>.</p>
-	<br>
+    <p>Ce site est sous licence : <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a>.</p>
 </footer>
-
-<script>
-function toggleSidebar() {
-    var sidebar = document.getElementById("sidebar");
-    sidebar.style.left = (sidebar.style.left === "-250px") ? "0" : "-250px";
-}
-</script>
 
 </body>
 </html>

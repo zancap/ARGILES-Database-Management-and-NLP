@@ -30,18 +30,20 @@ function debug_to_console($data) {
 	<div id="menuToggle" onclick="toggleSidebar()">☰ Menu</div>
   
     <!-- La barre laterale -->
-    <div class="sidebar">
-        <h4>Menu</h4>
+    <div class="sidebar" id="sidebar">
+        <br>
+		<br>
         <a href="index.html">Accueil</a>
 		<a href="functions.html">Explorez les fonctionnalités</a>
-        <a href="database_visualization.php">Contenu de la base de données</a>
-        <a href="pdf_visualization.php">Visualisation des copies d'élèves originales</a>
-        <a href="upload.html">Téléversez des fichiers</a>
+        <a href="pdf_visualization.html">Visualisation des copies d'élèves originales</a>
+        <a href="login.php">Téléversez des fichiers</a>
     </div>
 
     <!-- L'en-tete -->
     <header>
         <h1><?= htmlspecialchars($title) ?></h1>
+		<br>
+		<a href="index.html" class="btn-back">← Retour à l'accueil</a>
     </header>
 
     <!-- Le contenu principal -->
@@ -65,8 +67,7 @@ function debug_to_console($data) {
     <footer>
         <p>© 2025 Projet ARGILES | Université Grenoble Alpes</p>
         <p>Contactez le directeur du projet : <a href="https://www.univ-grenoble-alpes.fr/thomas-lebarbe-538931.kjsp" target="_blank">Thomas Lebarbé</a></p>
-		<p>Ce site est sous licence <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a></p>
-		<br>
+		<p>Ce site est sous licence : <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons BY-NC-SA 4.0</a></p>
     </footer>
 
     <!-- Les scripts -->
@@ -92,19 +93,19 @@ function debug_to_console($data) {
         }
         echo 'domReady(onStart);';  //  Construit le filtre
         ?>
-		
-	<!-- Toggle Menu Script -->
-    function toggleSidebar() {
-      var sidebar = document.getElementById("sidebar");
 
-      // Ensure a default left position
-      if (!sidebar.style.left) {
-        sidebar.style.left = "-250px";
-      }
+	function toggleSidebar() {
+		var sidebar = document.getElementById("sidebar");
 
-      // Toggle sidebar visibility
-      sidebar.style.left = (sidebar.style.left === "-250px") ? "0" : "-250px";
-    }
+		// Get the actual computed left position
+		var currentLeft = window.getComputedStyle(sidebar).left;
+
+		if (currentLeft === "-250px") {
+			sidebar.style.left = "0"; // Show sidebar
+		} else {
+			sidebar.style.left = "-250px"; // Hide sidebar
+		}
+	}
     </script>
 
 </body>

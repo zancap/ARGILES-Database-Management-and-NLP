@@ -61,6 +61,25 @@ header {
     max-width:80%;
 }
 
+/* Home Button */
+.btn-back {
+    background-color: #3b6b58; 
+    color: #fff;
+    border: 2px solid #2c5c4a;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    display: inline-block;
+    margin-top: 15px;
+}
+.btn-back:hover {
+    background-color: #244c3c;
+    color: #fff;
+}
+
 /* Footer */
 footer {
     background-color: #2c3e50;
